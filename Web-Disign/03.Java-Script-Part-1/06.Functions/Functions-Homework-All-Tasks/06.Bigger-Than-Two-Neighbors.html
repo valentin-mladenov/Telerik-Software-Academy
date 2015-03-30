@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<p>Write a function that checks if the element at given position in given array of integers is bigger than its two neighbors (when such exist).</p>
+	<div id="inputdiv">
+		<div class="input">
+			<label for="tb-first">Number to find: </label>
+			<input type="text" id="tb-first" /><br />
+			<label for="tb-second">ARRAY (numbers split by ' '): </label>
+
+			<input type="text" id="tb-second" />
+		</div>
+		<div id="inputbutton">
+			<a href="#" onclick="onFindButtonClick()">Find</a>
+		</div>
+	</div>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function biggerOrNot(position, array) {
+			var bigger = false;
+
+			if ((array[position] > array[position - 1]) && (array[position] > array[position + 1])) {
+				bigger = true;
+			}
+
+			return bigger;
+		}
+
+		function test() {
+			jsConsole.writeLine('---------------------------');
+			jsConsole.writeLine('Test');
+			var testarr = [5, 6, 5, 6, 8, 5, 4];
+			jsConsole.writeLine('Test arr: ' + testarr);
+			var testPos = 4;
+
+			jsConsole.writeLine('Test number: ' + testPos);
+
+			if (testPos == 0 || testPos >= (testarr.length - 1)) {
+				jsConsole.writeLine("Not enoght neighbors (the position is eighter first, last or outside array).");
+			} else {
+				var bigger = biggerOrNot(testPos, testarr);
+				if (bigger == true) {
+					jsConsole.writeLine("The number at position " + testPos + " is bigger than it's two neighbors.");
+				} else {
+					jsConsole.writeLine("The number at position " + testPos + " isn't bigger than it's two neighbors.");
+				}
+			}
+
+			jsConsole.writeLine('---------------------------');
+			jsConsole.writeLine();
+		}
+
+
+		test();
+
+		function onFindButtonClick() {
+			var position = jsConsole.readInteger("#tb-first");
+			var arrayStr = jsConsole.read("#tb-second");
+			var array = arrayStr.split(' ');
+
+			if (position == 0 || position >= (array.length - 1)) {
+				jsConsole.writeLine("Not enoght neighbors (the position is eighter first, last or outside array).");
+			} else {
+				var bigger = biggerOrNot(position, array);
+
+				if (bigger == true) {
+					jsConsole.writeLine("The number at position {0} is bigger than it's two neighbors.", position);
+				} else {
+					jsConsole.writeLine("The number at position {0} isn't bigger than it's two neighbors.", position);
+				}
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<p>Write a script that compares two char arrays lexicographically (letter by letter).</p>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		var charArray1 = ['U', 'O', 'l', 'B', 'c'];
+		var charArray2 = ['a', 'O', 'c', 'R', 'U']
+
+		jsConsole.writeLine(charArray1);
+		jsConsole.writeLine(charArray2);
+
+		if (charArray2.length > charArray1.length)
+		{
+			jsConsole.writeLine("Array 1 is smaller than Array 2. Using Array 1's length.");
+		}
+		else if (charArray2.length < charArray1.length)
+		{
+			jsConsole.writeLine("Array 2 is smaller than Array 1. Using Array 2's length.");
+		}
+
+		var minSize = Math.min(charArray1.length, charArray2.length);
+
+		for (var i = 0; i < minSize; i++) {
+			if (charArray1[i] === charArray2[i]) {
+				jsConsole.writeLine("Array1 [" + i + "] == Array2 [" + i + "]");
+			}
+			else {
+				jsConsole.writeLine("Array1 [" + i + "] != Array2 [" + i + "]");
+			}
+		}
+	</script>
+
+</body>
+</html>

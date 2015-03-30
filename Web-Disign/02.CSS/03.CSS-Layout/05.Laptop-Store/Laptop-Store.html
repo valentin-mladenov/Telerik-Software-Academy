@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link type="text/css" rel="stylesheet"
+          href="Laptop-Store-CSS.css" />
+</head>
+<body class="body">
+    <header>
+        <h1>
+            <a href="#">Apple</a>
+            <a href="#">Toshiba</a>
+            <a href="#">Lenovo</a>
+            <a href="#">Dell</a>
+            <a href="#">Asus</a>
+            <a href="#">Hacer</a>
+            <a href="#">HP</a>
+        </h1>
+    </header>
+    <article>
+        <section> 
+            <fieldset class="even">
+                <legend>Apple MacBook Air</legend>
+                <img src="MacBook.png" /><!--height="50"--> 
+                <p>64 GB SSD</p>
+                <p>2 GB DDR</p>
+                <p class="USD">1300 USD</p>
+                <p class="lastP">Intel Core i5</p>
+            </fieldset>
+            <fieldset>
+                <legend>Apple MacBook Air</legend>
+                <img src="MacBook.png" /><!--height="50"--> 
+                <p>64 GB SSD</p>
+                <p>2 GB DDR</p>
+                <p class="USD">1300 USD</p>
+                <p class="lastP">Intel Core i5</p>
+            </fieldset>
+            <fieldset class="even">
+                <legend>Apple MacBook Air</legend>
+                <img src="MacBook.png" /> <!--height="50"--> 
+                <p>64 GB SSD</p>
+                <p>2 GB DDR</p>
+                <p class="USD">1300 USD</p>
+                <p class="lastP">Intel Core i5</p>
+            </fieldset>
+            <fieldset>
+                <legend>Apple MacBook Air</legend>
+                <img src="MacBook.png" /> <!--height="50"-->
+                <p>64 GB SSD</p>
+                <p>2 GB DDR</p>
+                <p class="USD">1300 USD</p>
+                <p class="lastP">Intel Core i5</p>
+            </fieldset>
+            <fieldset class="even">
+                <legend>Apple MacBook Air</legend>
+                <img src="MacBook.png" /><!--height="50"--> 
+                <p>64 GB SSD</p>
+                <p>2 GB DDR</p>
+                <p class="USD">1300 USD</p>
+                <p class="lastP">Intel Core i5</p>
+            </fieldset>
+            <fieldset>
+                <legend>Apple MacBook Air</legend>
+                <img src="MacBook.png" /><!--height="50"--> 
+                <p>64 GB SSD</p>
+                <p>2 GB DDR</p>
+                <p class="USD">1300 USD</p>
+                <p class="lastP">Intel Core i5</p>
+            </fieldset>
+        </section>
+        <aside>
+                <label for="min500">Min Price:</label>
+                <span id="min500price">500</span> USD
+            <br />
+                <input type="range" name="min500" id="min500" min="0" max="900" value="500" step="50" onchange="getElementById('min500price').innerHTML = this.value" />
+            <br />
+                <label for="max500">Max Price:</label>
+                <span id="max500price">1500</span> USD
+            <br />
+                <input type="range" min="0" max="3000" value="1500" step="100" onchange="getElementById('max500price').innerHTML = this.value" />
+            <br />
+                <label for="minRam">Min RAM:</label>
+                <span id="minRamSpan">4</span> GB
+            <br />
+                <input type="range" min="0" max="8" value="4" step="1" onchange="getElementById('minRamSpan').innerHTML = this.value" />
+            <br />
+                <label for="maxRam">Max RAM:</label>
+                <span id="maxRamSpan">16</span> GB
+            <br />
+                <input type="range" min="0" max="32" value="16" step="2" onchange="getElementById('maxRamSpan').innerHTML = this.value" />
+        </aside>
+    </article>
+</body>
+</html>

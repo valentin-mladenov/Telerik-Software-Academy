@@ -1,0 +1,222 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <p>Write a script that converts a number in the range [0...999] to a text corresponding to its English pronunciation.</p>
+    <p>Examples:
+	0 -> 'Zero'
+	273 -> 'Two hundred seventy three';
+	400 -> 'Four hundred';
+	501 -> 'Five hundred and one';
+	711 -> 'Seven hundred and eleven'.</p>
+    <p>That task was with * in C#.</p>
+    <div id="inputdiv">
+        <div class="input">
+            <label for="tb-first">Number: </label>
+            <input type="text" id="tb-first" />
+        </div>
+        <div id="inputbutton">
+            <a href="#" onclick="onFindButtonClick()">Find</a>
+        </div>
+    </div>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>        // switch functions
+        function onFindButtonClick() {
+            function Digits(number0To9) {
+                switch (number0To9) {
+                    case 0:
+                        jsConsole.writeLine("Zero.");
+                        break;
+                    case 1:
+                        jsConsole.writeLine("One.");
+                        break;
+                    case 2:
+                        jsConsole.writeLine("Two.");
+                        break;
+                    case 3:
+                        jsConsole.writeLine("Three.");
+                        break;
+                    case 4:
+                        jsConsole.writeLine("Four.");
+                        break;
+                    case 5:
+                        jsConsole.writeLine("Five.");
+                        break;
+                    case 6:
+                        jsConsole.writeLine("Six.");
+                        break;
+                    case 7:
+                        jsConsole.writeLine("Seven.");
+                        break;
+                    case 8:
+                        jsConsole.writeLine("Eight.");
+                        break;
+                    case 9:
+                        jsConsole.writeLine("Nine.");
+                        break;
+                }
+            }
+
+            function Teen10To19(number10To19) {
+                switch (number10To19) {
+                    case 10:
+                        jsConsole.writeLine("Ten");
+                        break;
+                    case 11:
+                        jsConsole.writeLine("Eleven.");
+                        break;
+                    case 12:
+                        jsConsole.writeLine("Twelve.");
+                        break;
+                    case 13:
+                        jsConsole.writeLine("Thirteen.");
+                        break;
+                    case 14:
+                        jsConsole.writeLine("Fourteen.");
+                        break;
+                    case 15:
+                        jsConsole.writeLine("Fifteen.");
+                        break;
+                    case 16:
+                        jsConsole.writeLine("Sixteen.");
+                        break;
+                    case 17:
+                        jsConsole.writeLine("Seventeen.");
+                        break;
+                    case 18:
+                        jsConsole.writeLine("Eighteen.");
+                        break;
+                    case 19:
+                        jsConsole.writeLine("Nineteen.");
+                        break;
+                }
+            }
+
+            function Tens20To90(number20To90) {
+                switch (number20To90) {
+                    case 2:
+                        jsConsole.write("Twenty");
+                        break;
+                    case 3:
+                        jsConsole.write("Thirty");
+                        break;
+                    case 4:
+                        jsConsole.write("Fourty");
+                        break;
+                    case 5:
+                        jsConsole.write("Fifty");
+                        break;
+                    case 6:
+                        jsConsole.write("Sixty");
+                        break;
+                    case 7:
+                        jsConsole.write("Seventy");
+                        break;
+                    case 8:
+                        jsConsole.write("Eighty");
+                        break;
+                    case 9:
+                        jsConsole.write("Ninety");
+                        break;
+                }
+            }
+
+            function Hundreds100To900(number100To900) {
+                switch (number100To900) {
+                    case 1:
+                        jsConsole.write("One hundred");
+                        break;
+                    case 2:
+                        jsConsole.write("Two hundred");
+                        break;
+                    case 3:
+                        jsConsole.write("Three hundred");
+                        break;
+                    case 4:
+                        jsConsole.write("Four hundred");
+                        break;
+                    case 5:
+                        jsConsole.write("Five hundred");
+                        break;
+                    case 6:
+                        jsConsole.write("Six hundred");
+                        break;
+                    case 7:
+                        jsConsole.write("Seven hundred");
+                        break;
+                    case 8:
+                        jsConsole.write("Eight hundred");
+                        break;
+                    case 9:
+                        jsConsole.write("Nine hundred");
+                        break;
+                }
+            }
+
+
+            var userInput, userFirstDigits, userSecondDigit, userThirdDigit;
+            userInput = jsConsole.readInteger("#tb-first");
+
+            if (userInput < 0 || userInput > 999) {
+                jsConsole.writeLine("Error!!! Please enter a valid number.");
+                //userInput = jsConsole.readInteger("#tb-first");
+            }
+            else {
+                if (userInput >= 0 && userInput <= 9) {
+                    Digits(userInput);
+                }
+                if (userInput >= 10 && userInput <= 19) {
+                    Teen10To19(userInput);
+                }
+                if (userInput >= 20 && userInput <= 99) {
+                    userFirstDigits = Math.floor(userInput / 10);
+                    userSecondDigit = userInput - (userFirstDigits * 10);
+
+                    if (userSecondDigit == 0) {
+                        Tens20To90(userFirstDigits);
+                        jsConsole.writeLine(".");
+                    }
+                    else {
+                        Tens20To90(userFirstDigits);
+                        jsConsole.write(" ");
+                        Digits(userSecondDigit);
+                    }
+                }
+                if (userInput >= 100 && userInput <= 999) {
+                    userFirstDigits = Math.floor(userInput / 100);
+                    userSecondDigit = Math.floor(((userInput - (userFirstDigits * 100)) / 10));
+                    userThirdDigit = userInput - (userFirstDigits * 100) - (userSecondDigit * 10);
+
+                    if (userSecondDigit == 0 && userThirdDigit == 0) {
+                        Hundreds100To900(userFirstDigits);
+                        jsConsole.writeLine(".");
+                    }
+                    else if (userThirdDigit == 0 && userSecondDigit > 2) {
+                        Hundreds100To900(userFirstDigits);
+                        jsConsole.write(" and ");
+                        Tens20To90(userSecondDigit);
+                        jsConsole.writeLine(".");
+                    }
+                    else if (userSecondDigit == 1) {
+                        Hundreds100To900(userFirstDigits);
+                        jsConsole.write(" and ");
+                        Teen10To19(userThirdDigit + 10);
+
+                    }
+                    else {
+                        Hundreds100To900(userFirstDigits);
+                        jsConsole.write(" and ");
+                        Tens20To90(userSecondDigit);
+                        jsConsole.write(" ");
+                        Digits(userThirdDigit);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Task01: Create a XML file representing catalogue. The catalogue should contain
+albums ofdifferent artists. For each album you should define: title, artist, year,
+producer, price and a list of songs. Each song should be described by title and duration.-->
+
+<catalogue>
+  <album>
+    <title>Fear of the dark</title>
+    <artist>Iron Maiden</artist>
+    <year>1992</year>
+    <producers>Steve Harris</producers>
+    <price>24.98</price>
+    <songs>
+      <song>
+        <title>Fear of the Dark</title>
+        <duration>7:18</duration>
+      </song>
+      <song>
+        <title>Afraid to Shoot Strangers</title>
+        <duration>6:56</duration>
+      </song>
+      <song>
+        <title>Be Quick or Be Dead</title>
+        <duration>3:24</duration>
+      </song>
+    </songs>
+  </album>
+  <album>
+    <title>The Triumph of Steel</title>
+    <artist>Manowar</artist>
+    <year>1992</year>
+    <producers>John Pettigrass</producers>
+    <price>19.99</price>
+    <songs>
+      <song>
+        <title>Master of the Wind</title>
+        <duration>5:26</duration>
+      </song>
+      <song>
+        <title>The Power of Thy Sword</title>
+        <duration>7:51</duration>
+      </song>
+      <song>
+        <title>The Demon's Whip</title>
+        <duration>7:50</duration>
+      </song>
+    </songs>
+  </album>
+  <album>
+    <title>Reign In Blood</title>
+    <artist>Slayer</artist>
+    <year>1986</year>
+    <producer>Rick Rubin</producer>
+    <price>11.54</price>
+    <songs>
+      <song>
+        <title>Angel of Death</title>
+        <duration>4:51</duration>
+      </song>
+      <song>
+        <title>Piece by Piece</title>
+        <duration>2:03</duration>
+      </song>
+      <song>
+        <title>Necrophobic</title>
+        <duration>1:40</duration>
+      </song>
+      <song>
+        <title>Altar of Sacrifice</title>
+        <duration>2:50</duration>
+      </song>
+      <song>
+        <title>Jesus Saves</title>
+        <duration>2:54</duration>
+      </song>
+      <song>
+        <title>Criminally Insane</title>
+        <duration>2:23</duration>
+      </song>
+      <song>
+        <title>Reborn</title>
+        <duration>2:12</duration>
+      </song>
+      <song>
+        <title>Epidemic</title>
+        <duration>2:23</duration>
+      </song>
+      <song>
+        <title>Postmortem</title>
+        <duration>3:27</duration>
+      </song>
+      <song>
+        <title>Raining Blood</title>
+        <duration>4:17</duration>
+      </song>
+    </songs>
+  </album>
+  <album>
+    <title>Sounds of Violence</title>
+    <artist>Onslaught</artist>
+    <year>2011</year>
+    <producer>Jacob Hansen</producer>
+    <price>26.59</price>
+    <songs>
+      <song>
+        <title>Into the Abyss</title>
+        <duration>1:01</duration>
+      </song>
+      <song>
+        <title>Born for War</title>
+        <duration>5:56</duration>
+      </song>
+      <song>
+        <title>The Sound of Violence</title>
+        <duration>4:05</duration>
+      </song>
+      <song>
+        <title>Code Black</title>
+        <duration>6:23</duration>
+      </song>
+      <song>
+        <title>Rest in Pieces</title>
+        <duration>4:43</duration>
+      </song>
+      <song>
+        <title>Godhead</title>
+        <duration>4:51</duration>
+      </song>
+      <song>
+        <title>Hatebox</title>
+        <duration>4:52</duration>
+      </song>
+      <song>
+        <title>Antitheist</title>
+        <duration>6:33</duration>
+      </song>
+      <song>
+        <title>Suicideology</title>
+        <duration>5:13</duration>
+      </song>
+      <song>
+        <title>End of the Storm (outro)</title>
+        <duration>1:31</duration>
+      </song>
+      <song>
+        <title>Bomber (Motörhead cover, feat. Phil Campbell and Tom Angelripper)</title>
+        <duration>2:51</duration>
+      </song>
+    </songs>
+  </album>
+  <album>
+    <title>South of Heaven</title>
+    <artist>Slayer</artist>
+    <year>1988</year>
+    <producer>Rick Rubin</producer>
+    <price>16.39</price>
+    <songs>
+      <song>
+        <title>South of Heaven</title>
+        <duration>4:58</duration>
+      </song>
+      <song>
+        <title>Silent Scream</title>
+        <duration>3:07</duration>
+      </song>
+      <song>
+        <title>Live Undead</title>
+        <duration>3:50</duration>
+      </song>
+      <song>
+        <title>Behind the Crooked Cross</title>
+        <duration>3:15</duration>
+      </song>
+      <song>
+        <title>Mandatory Suicide</title>
+        <duration>4:05</duration>
+      </song>
+      <song>
+        <title>Ghosts of War</title>
+        <duration>3:53</duration>
+      </song>
+      <song>
+        <title>Read Between the Lies</title>
+        <duration>3:20</duration>
+      </song>
+      <song>
+        <title>Cleanse the Soul</title>
+        <duration>3:02</duration>
+      </song>
+      <song>
+        <title>Dissident Aggressor (Judas Priest cover)</title>
+        <duration>2:35</duration>
+      </song>
+      <song>
+        <title>Spill the Blood</title>
+        <duration>4:48</duration>
+      </song>
+    </songs>
+  </album>
+</catalogue>

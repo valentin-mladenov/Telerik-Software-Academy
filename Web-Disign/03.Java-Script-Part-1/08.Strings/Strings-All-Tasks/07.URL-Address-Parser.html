@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<script src="scripts/string-extensions.js"></script>
+</head>
+<body>
+	<p>Write a script that parses an URL address given in the format: and extracts from it the [protocol], [server] and [resource] elements. Return the elements in a JSON object.</p>
+	<div id="inputdiv">
+		<div class="input">
+			<label for="tb-first">Text: </label>
+			<input type="text" id="tb-first" />
+		</div>
+		<div id="inputbutton">
+			<a href="#" onclick="onFindButtonClick()">Find</a>
+		</div>
+	</div>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function onFindButtonClick() {
+			function ExtractAsJSON(text) {
+				var arr = text.split('/');
+
+				var res = '';
+				for (var i = 3; i < arr.length; i+=1) {
+					res += '/' + arr[i];
+				}
+
+				var result = {
+					protocol: arr[0],
+					server: arr[2],
+					resource: res,
+					//toString: function () { this.protocol + '//' + this.server + '/' + this.resource }
+				}
+				return result;
+			}
+
+			//var text = jsConsole.read('#tb-first');
+
+			//test
+			var text = 'http://www.devbg.org/forum/index.php';
+
+			var formatedText = ExtractAsJSON(text);
+
+			jsConsole.writeLine(JSON.stringify(formatedText,'"',''));
+		}
+	</script>
+</body>
+</html>

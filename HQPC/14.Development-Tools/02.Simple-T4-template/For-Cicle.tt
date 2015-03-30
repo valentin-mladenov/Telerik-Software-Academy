@@ -1,0 +1,12 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+<# for(int i = 0; i < 3; i++) { #>
+	private int item<#=(i+1)#>
+<# } #>
+
+<# for(int i = 0; i < 3; i++) { #>
+	public int Item<#=(i+1)#> { get; set; }
+<# } #>

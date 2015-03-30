@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <p>Write a script that enters the coefficients a, b and c of a quadratic equation
+		a*x2 + b*x + c = 0
+		and calculates and prints its real roots. Note that quadratic equations may have 0, 1 or 2 real roots.</p>
+    <div id="inputdiv">
+        <div class="input">
+            <label for="tb-first">Coefficient a: </label>
+            <input type="text" id="tb-first" />
+        </div>
+        <div class="input">
+            <label for="tb-second">Coefficient b: </label>
+            <input type="text" id="tb-second" />
+        </div>
+        <div class="input">
+            <label for="tb-third">Coefficient c: </label>
+            <input type="text" id="tb-third" />
+        </div>
+        <div id="inputbutton">
+            <a href="#" onclick="onFindButtonClick()">Find</a>
+        </div>
+    </div>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function onFindButtonClick() {
+            var coefficientA = jsConsole.readFloat("#tb-first");
+            var coefficientB = jsConsole.readFloat("#tb-second");
+            var coefficientC = jsConsole.readFloat("#tb-third");
+
+            var sqareRoot = (coefficientB * coefficientB) - (4 * coefficientA * coefficientC);
+            var rootX1 = 1;
+            var rootX2 = 1;
+            var rootX = 1;
+
+            if (sqareRoot > 0)
+            {
+                rootX1 = (-coefficientB + Math.sqrt(sqareRoot)) / (2 * coefficientA);
+                rootX2 = (-coefficientB - Math.sqrt(sqareRoot)) / (2 * coefficientA);
+                jsConsole.writeLine("The real root X1 = " + rootX1.toFixed(4));
+                jsConsole.writeLine("The real root X2 = " + rootX2.toFixed(4));
+            }
+            else if (sqareRoot < 0)
+            {
+                jsConsole.writeLine("No real roots.");
+            }
+            else
+            {
+                RootX = (-coefficientB + System.Math.Sqrt(sqareRoot)) / (2 * coefficientA);
+                jsConsole.writeLine("One real root: " + rootX.toFixed(4));
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<p>Write a script that allocates array of 20 integers and initializes each element by its index multiplied by 5. Print the obtained array on the console.</p>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+			var number = 20;
+
+			var array = [];
+			jsConsole.writeLine(array);
+
+			for (var i = 0; i < number; i++) {
+				array[i] = (i+1)*5;
+			}
+
+			var string = array.join(', ');
+			
+			jsConsole.writeLine(string);
+	</script>
+
+</body>
+</html>

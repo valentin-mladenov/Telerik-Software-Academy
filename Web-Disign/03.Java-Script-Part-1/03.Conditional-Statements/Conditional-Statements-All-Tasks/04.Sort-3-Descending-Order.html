@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <p>Sort 3 real values in descending order using nested if statements.</p>
+    <div id="inputdiv">
+        <div class="input">
+            <label for="tb-first">First Number: </label>
+            <input type="text" id="tb-first" />
+        </div>
+        <div class="input">
+            <label for="tb-second">Second Number: </label>
+            <input type="text" id="tb-second" />
+        </div>
+        <div class="input">
+            <label for="tb-third">Third Number: </label>
+            <input type="text" id="tb-third" />
+        </div>
+        <div id="inputbutton">
+            <a href="#" onclick="onFindButtonClick()">Find</a>
+        </div>
+    </div>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function onFindButtonClick() {
+            var firstNumber = jsConsole.readFloat("#tb-first");
+            var secondNumber = jsConsole.readFloat("#tb-second");
+            var thirdNumber = jsConsole.readFloat("#tb-third");
+
+            if (firstNumber > secondNumber) {
+                if (secondNumber > thirdNumber) {
+                    jsConsole.writeLine("The first " + firstNumber + " is the greates, then is the second " + secondNumber + " and the third " + thirdNumber + " is last.");
+                }
+                else if (secondNumber < thirdNumber) {
+                    jsConsole.writeLine("The first " + firstNumber + " is the greates, then is the third " + thirdNumber + " and the second " + secondNumber + " is last.");
+                }
+            }
+
+            if (secondNumber > thirdNumber) {
+                if (firstNumber > thirdNumber) {
+                    jsConsole.writeLine("The second " + secondNumber + " is the greates, then is the first " + firstNumber + " and the third " + thirdNumber + " is last.");
+                }
+                else if (firstNumber < thirdNumber) {
+                    jsConsole.writeLine("The second " + secondNumber + " is the greates, then is the third " + thirdNumber + " and the first " + firstNumber + " is last.");
+                }
+            }
+
+            if (thirdNumber > firstNumber) {
+                if (secondNumber > firstNumber) {
+                    jsConsole.writeLine("The third " + thirdNumber + " is the greates, then is the second " + secondNumber + " and the first " + firstNumber + " is last.");
+                }
+                else if (secondNumber < firstNumber) {
+                    jsConsole.writeLine("The third " + thirdNumber + " is the greates, then is the first " + firstNumber + " and the second " + secondNumber + " is last.");
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

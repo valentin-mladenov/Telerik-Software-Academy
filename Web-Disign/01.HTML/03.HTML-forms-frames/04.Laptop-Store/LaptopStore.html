@@ -1,0 +1,215 @@
+﻿<!--This exersice is with *.-->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <table style="border-color: black;">
+        <thead style="border-bottom-color: black;">
+            <tr style="border-bottom-color: black;">
+                <th colspan="3" style="text-align: center; border-bottom: 1px solid black;">
+                    <a href="#">Apple</a>
+                    <a href="#">Toshiba</a>
+                    <a href="#">Lenovo</a>
+                    <a href="#">Dell</a>
+                    <a href="#">Asus</a>
+                    <a href="#">Hacer</a>
+                    <a href="#">HP</a>
+                </th>
+            </tr>
+        </thead>
+        <tbody >
+            <tr>
+                <td>
+                    <table style="border: black solid 1px;">
+                        <tr>
+                            <td>
+                                <fieldset>
+                                    <legend>Apple MacBook Air</legend>
+                                    <table>
+                                        <tr>
+                                            <td rowspan="2">
+                                                <img src="MacBook.png" width="100" height="70" />
+                                            </td>
+                                            <td>64 GB SSD</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2 GB DDR</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1300 USD</td>
+                                            <td>Intel Core i5</td>
+                                        </tr>
+                                    </table>
+                                </fieldset>
+                            </td>
+                            <td>
+                                <fieldset>
+                                    <legend>Apple MacBook Air</legend>
+                                    <table>
+                                        <tr>
+                                            <td rowspan="2">
+                                                <img src="MacBook.png" width="100" height="70" />
+                                            </td>
+                                            <td>64 GB SSD</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2 GB DDR</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1300 USD</td>
+                                            <td>Intel Core i5</td>
+                                        </tr>
+                                    </table>
+                                </fieldset>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <fieldset>
+                                    <legend>Apple MacBook Air</legend>
+                                    <table>
+                                        <tr>
+                                            <td rowspan="2">
+                                                <img src="MacBook.png" width="100" height="70" />
+                                            </td>
+                                            <td>64 GB SSD</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2 GB DDR</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1300 USD</td>
+                                            <td>Intel Core i5</td>
+                                        </tr>
+                                    </table>
+                                </fieldset>
+                            </td>
+                            <td>
+                                <fieldset>
+                                    <legend>Apple MacBook Air</legend>
+                                    <table>
+                                        <tr>
+                                            <td rowspan="2">
+                                                <img src="MacBook.png" width="100" height="70" />
+                                            </td>
+                                            <td>64 GB SSD</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2 GB DDR</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1300 USD</td>
+                                            <td>Intel Core i5</td>
+                                        </tr>
+                                    </table>
+                                </fieldset>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <fieldset>
+                                    <legend>Apple MacBook Air</legend>
+                                    <table>
+                                        <tr>
+                                            <td rowspan="2">
+                                                <img src="MacBook.png" width="100" height="70" />
+                                            </td>
+                                            <td>64 GB SSD</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2 GB DDR</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1300 USD</td>
+                                            <td>Intel Core i5</td>
+                                        </tr>
+                                    </table>
+                                </fieldset>
+                            </td>
+                            <td>
+                                <fieldset>
+                                    <legend>Apple MacBook Air</legend>
+                                    <table>
+                                        <tr>
+                                            <td rowspan="2">
+                                                <img src="MacBook.png" width="100" height="70" />
+                                            </td>
+                                            <td>64 GB SSD</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2 GB DDR</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1300 USD</td>
+                                            <td>Intel Core i5</td>
+                                        </tr>
+                                    </table>
+                                </fieldset>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td style="text-align:center;">
+                    <table>
+                        <tr>
+                            <td style="text-align:left;">
+                                <label for="min500">Min Price:</label>
+                            </td>
+                            <td style="text-align:right;">
+                                <span id="min500price">500</span> USD
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="range" name="min500" id="min500" min="0" max="900" value="500" step="50" onchange="getElementById('min500price').innerHTML = this.value" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left;">
+                                <label for="max500">Max Price:</label>
+                            </td>
+                            <td style="text-align:right;">
+                                <span id="max500price">1500</span> USD
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="range" min="0" max="3000" value="1500" step="100" onchange="getElementById('max500price').innerHTML = this.value" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left;">
+                                <label for="minRam">Min RAM:</label>
+                            </td>
+                            <td style="text-align:right;">
+                                <span id="minRamSpan">4</span> GB
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="range" min="0" max="8" value="4" step="1" onchange="getElementById('minRamSpan').innerHTML = this.value" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:left;">
+                                <label for="maxRam">Max RAM:</label>
+                            </td>
+                            <td style="text-align:right;">
+                                <span id="maxRamSpan">16</span> GB
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="range" min="0" max="32" value="16" step="2" onchange="getElementById('maxRamSpan').innerHTML = this.value" />
+                            </td>
+                        </tr>
+                    </table> 
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

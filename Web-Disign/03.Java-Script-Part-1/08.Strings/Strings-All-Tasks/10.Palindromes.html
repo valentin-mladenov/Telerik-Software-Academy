@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<script src="scripts/string-extensions.js"></script>
+</head>
+<body>
+	<p>Write a program that extracts from a given text all palindromes, e.g. "ABBA", "lamal", "exe".</p>
+	<div id="inputdiv">
+		<div class="input">
+			<label for="tb-first">Text: </label>
+			<input type="text" id="tb-first" />
+		</div>
+		<div id="inputbutton">
+			<a href="#" onclick="onFindButtonClick()">Find</a>
+		</div>
+	</div>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function onFindButtonClick() {
+			//var text = jsConsole.read('#tb-first');
+
+			//test
+			var text = 'asehtrtjd mr civic a regasehshj s, a erghsehsaeh shsthsthsths srjh devoved, wreat gseghases ht Malayalam ew taersndf reviver, easgrsd, Wassamassaw wearyhdtjiguj';
+
+			var separators = /[ ,]+/;
+			var textArray = text.split(separators);
+
+			var valid = [];
+			var palindromCandidate = '';
+
+			for (var i = 0; i < textArray.length; i++) {
+				var reversed = [];
+				var inner = textArray[i].toLowerCase();
+				for (var j = inner.length; j >= 0; j -= 1) {
+					reversed.push(inner[j]);
+				}
+
+				palindromCandidate = reversed.join('');
+
+				if (palindromCandidate === inner && palindromCandidate.length >1) {
+					valid.push(palindromCandidate);
+				}
+			}
+
+			jsConsole.writeLine(valid);
+		}
+	</script>
+</body>
+</html>

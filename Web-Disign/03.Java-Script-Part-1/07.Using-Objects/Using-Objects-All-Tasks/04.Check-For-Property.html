@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<p>Write a function that checks if a given object contains a given property.</p>
+	<div id="inputdiv">
+		<div class="input">
+			<label for="tb-first">Property: </label>
+			<input type="text" id="tb-first" />
+			<label for="tb-second">Object:</label>
+			<input type="text" id="tb-second" />
+		</div>
+		<div id="inputbutton">
+			<a href="#" onclick="onFindButtonClick()">Find</a>
+		</div>
+	</div>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function hasProperty(obj, prop) {
+			if (prop in obj) {
+				return true;
+			}
+
+			return false;
+		}
+
+		function onFindButtonClick() {
+			//var property = jsConsole.read("#tb-first");
+			//var object = jsConsole.read("#tb-second");
+			
+			//var hasProp = hasProperty(object, property);
+
+			//test
+			var array = [5, 6, 5, 6, 8, 5, 4];
+			var hasProp = hasProperty(array, 'length');
+
+			jsConsole.writeLine('The current Object has that property: ' + hasProp);
+		}
+	</script>
+
+</body>
+</html>

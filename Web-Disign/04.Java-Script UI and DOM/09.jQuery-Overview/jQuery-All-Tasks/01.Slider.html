@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+	<script src="libs/jquery-2.1.1.min.js"></script>
+	<script src="libs/jquery-2.1.1.intellisense.js"></script>
+	<!--<script src="libs/jquery-2.1.1.min.map"></script>-->
+	<!--<script src="script/01.Slider.js"></script>-->
+</head>
+<body>
+	<p>
+		Create a slider control using jQuery<br />
+		The slider can have many slides<br />
+		Only one slide is visible at a time<br />
+		Each slide contains HTML code<br />
+		i.e. it can contain images, forms, divs, headers, links, etc…<br />
+		Implement functionality for changing the visible slide after 5 seconds<br />
+		Create buttons for next and previous slide<br />
+	</p>
+	<div id="root"></div>
+	<script>
+		window.onload = function () {
+			"use strict"
+
+			var $root = $('#root'),
+				slideCount = 5;
+
+			function slideCreator(index, $currentSlide) {
+				$currentSlide.css('display', 'none');
+				if (index === 1) {
+					$currentSlide.css('background-image', 'url("../images/html-css.png")');
+					$currentSlide.css('height', '170px');
+				}
+				if (index === 2) {
+					$currentSlide.css('background-image', 'url("../images/HTML5-CSS3-JS.png")');
+					$currentSlide.css('height', '170px');
+				}
+				if (index === 3) {
+					$currentSlide.css('background-image', 'url("../images/SocialMediaGlobe.png")');
+					$currentSlide.css('height', '170px');
+				}
+				if (index === 4) {
+					var link = 'Go here';
+					$currentSlide.css('background-color', '#563');
+					$currentSlide.append('<a href=# style="color:white">' + link + ' </a>');
+				}
+				if (index === 5) {
+					var text = "I'm H3";
+					$currentSlide.css('background-color', '#527');
+					$currentSlide.css('color', 'white');
+					$currentSlide.append('<h3>' + text + ' </h3>');
+				}
+			}
+
+			for (var i = 0; i < slideCount; i += 1) {
+				$root.append('<div id="slide' + (i + 1) + '"/>');
+
+				var $currentSlide = $('#slide' + (i + 1));
+
+				slideCreator(i + 1, $currentSlide);
+			}
+
+			function nextSlide() {
+				clearTimeout(nextSlide, 5000);
+				var $currentSlide = $('div[style*="display: block"]');
+				console.log($currentSlide);
+
+				if ($currentSlide.get(0).id == 'slide5') {
+					$currentSlide.fadeOut(1000);
+					$('#slide1').fadeIn(1000);
+					$('#slide1').css('display', 'block');
+
+
+				} else {
+					var $nextSibling = $currentSlide.next();
+					$currentSlide.fadeOut(1000);
+					$nextSibling.fadeIn(1000);
+					$nextSibling.css('display', 'block');
+				}
+
+				setTimeout(nextSlide, 5000);
+
+			}
+
+			function prevousSlide() {
+				clearTimeout(nextSlide, 5000);
+				var $currentSlide = $('div[style*="display: block"]');
+				console.log($currentSlide.get(0).id);
+				//$currentSlide.get(id)
+
+				if ($currentSlide.get(0).id == 'slide1') {
+					$currentSlide.fadeOut(1000);
+					$('#slide5').css('display', 'block');
+					$('#slide5').fadeIn(1000);
+
+				} else {
+					var $nextSibling = $currentSlide.prev();
+					$currentSlide.fadeOut(1000);
+					$nextSibling.fadeIn(1000);
+					$nextSibling.css('display', 'block');
+				}
+
+				setTimeout(nextSlide, 5000);	
+			}
+
+			$root.append('<input type="button" id="prevous" value="Prevous" />');
+			$root.append('<input type="button" id="next" value="Next" />');
+
+			var $startSlide = $('#slide1');
+			$startSlide.css('display', 'block');
+
+			$('#next').on('click', nextSlide);
+			$('#prevous').on('click', prevousSlide);
+
+			setTimeout(nextSlide, 5000);
+		}
+	</script>
+</body>
+</html>

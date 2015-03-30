@@ -1,0 +1,140 @@
+﻿
+<!--My Personsal Failed attempt for this task.
+	<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<script src="scripts/string-extensions.js"></script>
+</head>
+<body>
+	<p>Write a function that creates a HTML UL using a template for every HTML LI. The source of the list should an array of elements. Replace all placeholders marked with –{…}–   with the value of the corresponding property of the object.</p>
+	<div id="inputdiv">
+		<div class="input">
+			<label for="tb-first">Text: </label>
+			<input type="text" id="tb-first" />
+		</div>
+		<div id="inputbutton">
+			<a href="#" onclick="onFindButtonClick()">Find</a>
+		</div>
+	</div>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function onFindButtonClick() {
+			
+			//var placeholders = jsConsole.read('#tb-first');
+			//var substitute = jsConsole.read('#tb-second');
+
+			//test
+			var people = [
+					{
+						name: 'Peter',
+						age: 14
+					},
+					{
+						name: "John Doe",
+						age: 24
+					},
+					{
+						name: "Svetlin Nakov",
+						age: 33
+					},
+					{
+						name: "Pavel Nedved",
+						age: 38
+					}
+			];
+
+			var template = document.getElementById('list-item').innerHtml;
+			var peopleList = generateList(people, template);
+
+			jsConsole.writeLine(str);
+		}
+	</script>
+</body>
+</html>-->
+
+
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>title</title>
+	<link href="style.css" type="text/css" rel="stylesheet">
+	<style>
+		#output {
+			height: 360px;
+		}
+
+		#list-item {
+			display: none;
+		}
+	</style>
+	<script>
+		window.onload = function () {
+			document.getElementById("enter").onclick = function () {
+				//problem starts here
+				var template = document.getElementById('list-item').innerHTML;
+				var peopleList = "";
+				var temp = '';
+				function peopleFunc() {
+
+					var people = [
+					  {
+					  	name: "John Doe",
+					  	age: 24
+					  },
+					  {
+					  	name: "Svetlin Nakov",
+					  	age: 33
+					  },
+					  {
+					  	name: "Pavel Nedved",
+					  	age: 38
+					  }
+					];
+
+					var len = people.length;
+
+					for (var i = 0; i < len; i++) {
+						var temp = '';
+						peopleList += "<li>";
+						temp = template.replace(/-{name}-/, people[i].name);
+						temp = temp.replace(/-{age}-/, people[i].age);
+						peopleList += temp;
+						peopleList += "</li>";
+					}
+					var result = "<ul>" + peopleList + "</ul>";
+
+					return result;
+				}
+
+				document.getElementById("output").innerHTML = peopleFunc();
+			}
+			//ends here
+			document.getElementById("check").onclick = function () {
+				if (document.getElementById("check").checked) {
+					document.getElementById("task").style.display = "block";
+				} else {
+					document.getElementById("task").style.display = "none";
+				}
+			}
+			document.getElementById("task").style.display = "none";
+		}
+	</script>
+</head>
+<body>
+	<div>
+		<span><label for="check">Show/hide task condition.</label><input type="checkbox" id="check" name="check"></span>
+		<span id="task">Write a function that creates a HTML UL using a template for every HTML LI. The source of the list should an array of elements. Replace all placeholders marked with –{…}– with the value of the corresponding property of the object.</span>
+		<textarea id="output" placeholder="output" disabled></textarea><br>
+		<input id="enter" type="submit" value="EXECUTE">
+	</div>
+
+	<div data-type="template" id="list-item">
+		<strong>-{name}-</strong> <span>-{age}-</span>
+	</div>
+
+</body>
+</html>

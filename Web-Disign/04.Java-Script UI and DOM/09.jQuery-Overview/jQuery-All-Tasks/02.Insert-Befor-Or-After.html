@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+	<script src="libs/jquery-2.1.1.intellisense.js"></script>
+	<script src="libs/jquery-2.1.1.min.js"></script>
+</head>
+<body>
+	<p>Using jQuery implement functionality to insert a DOM element before or after another element
+</p>
+	<div id="root"></div>
+	<script>
+		window.onload = function () {
+			var $root = $('#root');
+
+			// can be extended further.
+			// $root.append('<input type="text" id="beforeOrAfter" placeholder="Input before/after element" />');
+
+			$root.append('<input type="text" id="element" placeholder="Input Element  (div, a, p)" />');
+			$root.append('<p id="anchor">Anchor</p>');
+			$root.append('<input type="button" id="before" value="Input Before" />');
+			$root.append('<input type="button" id="after" value="Input After"/ >');
+
+			function inputAfter() {
+				var $anchor = $('#anchor');
+				var $input = $('#element').val();
+				var $element = '<' + $input + '>' + $input + '</' + $input + '>';
+				$anchor.after($element);
+			}
+
+			function inputBefore() {
+				var $anchor = $('#anchor');
+				var $input = $('#element').val();
+				var $element = '<' + $input + '>' + $input + '</' + $input + '>';
+				$anchor.before($element);
+			}
+
+			$('#before').on('click', inputBefore);
+			$('#after').on('click', inputAfter);
+		};
+	</script>
+</body>
+</html>

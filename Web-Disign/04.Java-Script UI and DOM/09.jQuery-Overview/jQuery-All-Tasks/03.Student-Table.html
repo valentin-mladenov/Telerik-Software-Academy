@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<!--<script src="libs/jquery-2.1.1.intellisense.js"></script>-->
+	<script src="libs/jquery-2.1.1.min.js"></script>
+	<style>
+		body, table, tr, th, td{
+			padding:0;
+			margin:0;
+		}
+	</style>
+</head>
+<body>
+	<p>
+		By given an array of students, generate a table that represents these students.<br/>
+		Each student has first name,last name and grade.<br />
+		Use jQuery.
+	</p>
+	<div id="root"></div>
+	<script>
+		window.onload = function () {
+			var $root = $('#root'),
+				students = [
+					{
+						firstName: 'Valentin',
+						lastName: 'Ivanov',
+						grade: 6
+					},
+					{
+						firstName: 'Kojcho',
+						lastName: 'Peshev',
+						grade: 3
+					},
+					{
+						firstName: 'Gojko',
+						lastName: 'Gunchev',
+						grade: 4
+					},
+					{
+						firstName: 'Stanka',
+						lastName: 'Beteerova',
+						grade: 6
+					}],
+				studCount= students.length;
+		
+			$root.append('<table/>');
+			var $table = $('table').css('border', '1px solid black');
+			$('table').append('<tbody>');
+			$('table').append('<thead>');
+			var $HeadTr = $('<tr>').appendTo('thead')
+			$HeadTr.append($('<th>').html('First Name').css('border', '1px solid black'));
+			$HeadTr.append($('<th>').html('Last Name').css('border', '1px solid black'));
+			$HeadTr.append($('<th>').html('Grade').css('border', '1px solid black'));
+
+			for (var i = 0; i < studCount; i++) {
+				var $bodyTr = $('<tr>').appendTo('tbody');
+
+				$bodyTr.append($('<td>').html(students[i].firstName).css('border', '1px solid black'));
+				$bodyTr.append($('<td>').html(students[i].lastName).css('border', '1px solid black'));
+				$bodyTr.append($('<td>').html(students[i].grade).css('border', '1px solid black'));
+			}
+		};
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <p>Write a boolean expression for finding if the bit 3 (counting from 0) of a given integer is 1 or 0.</p>
+    <div id="inputdiv">
+        <div class="input">
+            <label for="tb-first">Number: </label>
+            <input type="text" id="tb-first" />
+        </div>
+        <div id="inputbutton">
+            <a href="#" onclick="onFindButtonClick()">Find</a>
+        </div>
+    </div>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function onFindButtonClick() {
+            var number = jsConsole.readFloat("#tb-first");
+            var boolean;
+            var position = 3;
+            var mask = number >> position;
+            var bit3 = mask & 1;
+
+            if (bit3 === 0) {
+                boolean = false;
+                jsConsole.writeLine('Is 1, the third digit of number ' + number + ': ' + boolean);
+            }
+            else {
+                boolean = true;
+                jsConsole.writeLine('Is 1, the third digit of number ' + number + ': ' + boolean);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

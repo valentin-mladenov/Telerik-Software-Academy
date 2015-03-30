@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<p>
+		Write a function that counts how many times given number appears in given array.
+		Write a test function to check if the function is working correctly.
+	</p>
+	<div id="inputdiv">
+		<div class="input">
+			<label for="tb-first">Number to find: </label>
+			<input type="text" id="tb-first" /><br />
+			<label for="tb-second">ARRAY (numbers split by '	'): </label>
+
+			<input type="text" id="tb-second" />
+		</div>
+		<div id="inputbutton">
+			<a href="#" onclick="onFindButtonClick()">Find</a>
+		</div>
+	</div>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function integerCounter(integerCount, array) {
+			var count = 0, i;
+				
+			for (i = 0; i < array.length; i += 1) {
+				if (integerCount == array[i]) {
+					count += 1;
+				}
+			}
+			return count;
+		}
+
+		function test() {
+			jsConsole.writeLine('---------------------------');
+			jsConsole.writeLine('Test');
+			var testarr = [5, 6, 5, 6, 8, 5, 4];
+			jsConsole.writeLine('Test arr: ' + testarr);
+			var testNum = 5;
+			jsConsole.writeLine('Test number: ' + testNum);
+
+			var counter = integerCounter(testNum, testarr);
+
+			jsConsole.writeLine("The integer " + testNum + " repeats " + counter + " times.");
+			jsConsole.writeLine('---------------------------');
+			jsConsole.writeLine();
+		}
+
+		test();
+
+		function onFindButtonClick() {
+			var number = jsConsole.readInteger("#tb-first");
+			var arrayStr = jsConsole.read("#tb-second");
+
+			var array = arrayStr.split(' ');
+			var counter = integerCounter(number, array);
+
+			jsConsole.writeLine("The integer " + number + " repeats " + counter + " times.");
+		}
+	</script>
+</body>
+</html>

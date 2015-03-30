@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml-styleshheet type="text/xsl" href="Students.xsl"?>
+<students name="Students" xmlns:students="urn:something.com:StudentsNamespace/InSomeSchool">
+  <student>
+    <name>Gosho Peshov</name>
+    <sex>Male</sex>
+    <birthDate>01.01.1990</birthDate>
+    <phone>+359877123456</phone>
+    <email>Gosho.Peshov@alabala.bg</email>
+    <course>Databases</course>
+    <speciality>Ajlqk</speciality>
+    <facultyNumber>123456789</facultyNumber>
+    <exams>
+      <exam>
+        <name>C#</name>
+        <tutor>Ivajlo Kenov</tutor>
+        <score>90</score>
+      </exam>
+      <exam>
+        <name>JavaScript</name>
+        <tutor>Ivajlo Kenov</tutor>
+        <score>70</score>
+      </exam>
+    </exams>
+    <enrollment>
+      <date>2009-12-01</date>
+      <score>80</score>
+    </enrollment>
+    <teacherEndorsement>
+      <endorsedFrom>Peter Petrov</endorsedFrom>
+      <endorsedFrom>Maria Petrova</endorsedFrom>
+    </teacherEndorsement>
+  </student>
+  <student>
+    <name>Minka Peshova</name>
+    <sex>Feale</sex>
+    <birthDate>21.11.1990</birthDate>
+    <phone>+359877124356</phone>
+    <email>Minka.Peshova@alabala.bg</email>
+    <course>DSA</course>
+    <speciality>Pisna Mi</speciality>
+    <facultyNumber>124356789</facultyNumber>
+    <exams>
+      <exam>
+        <name>C#</name>
+        <tutor>Ivajlo Kenov</tutor>
+        <score>90</score>
+      </exam>
+      <exam>
+        <name>JavaScript</name>
+        <tutor>Ivajlo Kenov</tutor>
+        <score>70</score>
+      </exam>
+    </exams>
+    <enrollment>
+      <date>2009-12-01</date>
+      <score>80</score>
+    </enrollment>
+    <teacherEndorsement>
+      <endorsedFrom>Peter Petrov</endorsedFrom>
+      <endorsedFrom>Maria Petrova</endorsedFrom>
+    </teacherEndorsement>
+  </student>
+  <student>
+    <name>Nebul Krumov</name>
+    <sex>Male</sex>
+    <birthDate>22.10.1990</birthDate>
+    <phone>+359877123465</phone>
+    <email>Nebul.Krumov@alabala.bg</email>
+    <course>Databases</course>
+    <speciality>Ajlqk</speciality>
+    <facultyNumber>123457689</facultyNumber>
+    <exams>
+      <exam>
+        <name>C#</name>
+        <tutor>Ivajlo Kenov</tutor>
+        <score>90</score>
+      </exam>
+      <exam>
+        <name>JavaScript</name>
+        <tutor>Ivajlo Kenov</tutor>
+        <score>100</score>
+      </exam>
+    </exams>
+    <enrollment>
+      <date>2009-12-01</date>
+      <score>80</score>
+    </enrollment>
+    <teacherEndorsement>
+      <endorsedFrom>Peter Petrov</endorsedFrom>
+      <endorsedFrom>Maria Petrova</endorsedFrom>
+    </teacherEndorsement>
+  </student>
+  <student>
+    <name>Anna-Maria-Viktoria Pishmanfamilianova</name>
+    <sex>FEmale</sex>
+    <birthDate>01.01.1900</birthDate>
+    <phone>+359877213456</phone>
+    <email>Pishmanfamilianova@alabala.bg</email>
+    <course>Languiges</course>
+    <speciality>Linguist</speciality>
+    <facultyNumber>987654321</facultyNumber>
+    <exams>
+      <exam>
+        <name>Advanced Languiges</name>
+        <tutor>Ivajlo Kenov</tutor>
+        <score>90</score>
+      </exam>
+      <exam>
+        <name>French</name>
+        <tutor>Who Cares</tutor>
+        <score>100</score>
+      </exam>
+    </exams>
+    <enrollment>
+      <date>2009-12-01</date>
+      <score>80</score>
+    </enrollment>
+    <teacherEndorsement>
+      <endorsedFrom>Peter Petrov</endorsedFrom>
+      <endorsedFrom>Maria Petrova</endorsedFrom>
+    </teacherEndorsement>
+  </student>
+</students>

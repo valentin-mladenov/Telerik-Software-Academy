@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+</head>
+<body>
+	<canvas id="canvas" width="1000" height="600" style="border: 2px solid black;"></canvas>
+	<script>
+		var canvas = document.getElementById('canvas'),
+			cntx = canvas.getContext('2d'),
+			radius = 10;
+			cntxX = 10,
+			cntxY = 10,
+			updateX = 2,
+			width = canvas.width - radius,
+			height = canvas.height - radius,
+			updateY = 2;
+
+		cntx.fillStyle = 'purple';
+		cntx.strokeStyle = 'yellow';
+
+		function bouncingBall() {
+			cntx.clearRect(0, 0, canvas.width, canvas.height);
+			
+			if (cntxX >= width) {
+				updateX -= 2;
+			}
+			if (cntxX <= 5) {
+				updateX += 2;
+			}
+			if (cntxY >= height) {
+				updateY -= 2;
+			}
+			if (cntxY <= 5) {
+				updateY += 2;
+			}
+
+			cntxX += updateX;
+			cntxY += updateY;
+
+			cntx.beginPath();
+			cntx.arc(cntxX, cntxY, radius, 0, 2 * Math.PI);
+			cntx.fill();
+			cntx.stroke();
+
+			requestAnimationFrame(bouncingBall);
+		}
+
+		bouncingBall();
+	</script>
+</body>
+</html>

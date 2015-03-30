@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <p>Write a boolean expression that checks for given integer if it can be divided (without remainder) by 7 and 5 in the same time.</p>
+    <div id="inputdiv">
+        <div class="input">
+            <label for="tb-first">Number: </label>
+            <input type="text" id="tb-first" />
+        </div>
+        <div id="inputbutton">
+            <a href="#" onclick="onFindButtonClick()">Find</a>
+        </div>
+    </div>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function onFindButtonClick() {
+            var number = jsConsole.readFloat("#tb-first");;
+            if (number % 35 === 0) {
+                jsConsole.writeLine('The number ' + number + ' can be divided by 5 and 7.');
+            }
+            else {
+                jsConsole.writeLine('The number ' + number + ' can\'t be divided by 5 and 7.');
+            }
+        }
+    </script>
+</body>
+</html>

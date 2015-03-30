@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<p>
+		Write a function that groups an array of persons by age, first or last name. The function must return an associative array,
+		with keys - the groups, and values -arrays with persons in this groups.
+	</p>
+	<p>Use function overloading (i.e. just one function).</p>
+	<h1>I don't do something correctly. Just can't find my error.</h1>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function grouping(persons, property) {
+			var grouped = {};
+
+			//for (var i in persons) {
+			//	var person = persons[i];
+			//	var group = person[property];
+
+			//	if (!grouped[group]) {
+			//		grouped[group] = []; //Person creation
+			//	}
+			//	grouped[group].push(person); //Person included
+			//}
+
+			//return grouped;
+
+			switch (property) {
+				case 'firstname':
+				case 'lastname':
+				case 'age':
+					{
+						for (var i = 0; i < persons.length; i++) {
+							if (grouped[persons[i].property] == undefined) {
+								grouped[persons[i].property] = [];
+								grouped[persons[i].property].push(persons[i]);
+							} else {
+								grouped[persons[i].property].push(persons[i]);
+							}	
+						}
+						return grouped;
+					}
+					break;
+				default:
+					jsConsole.writeLine('Wrong property.');
+					break;
+			}
+		}
+		var persons = [
+			{ firstname: 'Gosho', lastname: 'Petrov', age: 32 },
+			{ firstname: 'Muncho', lastname: 'Munev', age: 81 },
+			{ firstname: 'Edi', lastname: 'Kojsi', age: 12 },
+			{ firstname: 'Bay', lastname: 'Ivan', age: 45 },
+			{ firstname: 'Nina', lastname: 'Gancheva', age: 120 },
+			{ firstname: 'Valjo', lastname: 'Ivanov', age: 71 }
+		];
+
+		var property = 'age';
+
+		var groupedArr = grouping(persons, property);
+
+		for (var i in groupedArr) {
+			var inGrupArr = groupedArr[i];
+			for (var j in inGrupArr) {
+				jsConsole.writeLine(inGrupArr[j].firstname + ' ' + inGrupArr[j].lastname + ' on age of: ' + inGrupArr[j].age);
+			}
+		}
+	</script>
+</body>
+
+</html>

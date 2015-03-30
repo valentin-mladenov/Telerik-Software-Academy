@@ -1,0 +1,290 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="scripts/kinetic-v5.1.0.min.js"></script>
+	<script src="scripts/Input-Family-Tree.js"></script>
+	<script src="scripts/Family-Tree-Creator.js"></script>
+</head>
+<body >
+	<h1>My code gives some length error i don't know why!? The code is in the HTML file.</h1>
+	<div id="kinetic-container"></div>	
+	<!--<script>
+		window.onload = function () {
+			var stage = new Kinetic.Stage({
+				container: 'kinetic-container',
+				width: 1500,
+				height: 1200
+			});
+
+			var layer = new Kinetic.Layer({
+				draggable: true
+			});
+
+			layer.on("mousemove", function () {
+				document.body.style.cursor = 'pointer';
+			})
+
+			layer.on("mouseout", function () {
+				document.body.style.cursor = 'default';
+			})
+
+			var familyTree = familyParser(InputFamilyTree.familyMembers),
+				dictionary = dictionaryBuilder(familyTree),
+				treeRoot = rootFinder(familyTree, dictionary);
+
+			drawFamilyTree(layer, treeRoot);
+			stage.add(layer);
+		};
+
+		var i, j; // dictionary, node, mother, father, children, root;
+
+		var nodeWidth = 150,
+			nodeHeight = 50,
+			fontSize = 15;
+
+		var treeStart = 15,
+			nextBranch = 70;
+
+		var stepToNextNode = nodeWidth + 20,
+			posX = 470,
+			positionXStep = 2 * stepToNextNode;
+
+
+		function familyParser(familyTree) {
+			var result = [];
+			for (i = 0; i < familyTree.length; i+=1) {
+				var node = new Node(familyTree[i].mother,
+					familyTree[i].father,
+					familyTree[i].children);
+
+				result.push(node);
+			}
+			return result;
+		}
+
+		function dictionaryBuilder(familyTree) {
+			var dictionary = [];
+			for (i = 0; i < familyTree.length; i+=1) {
+				var mother = familyTree[i].mother;
+				var father = familyTree[i].father;
+
+				dictionary[mother] = familyTree[i];
+				dictionary[father] = familyTree[i];
+			}
+
+			for (var name in dictionary) {
+				var node = dictionary[name];
+
+				for (i = 0; i < node.children.length; i+=1) {
+					var children = node.children[i];
+
+					if (dictionary[children] && !(children instanceof Node)) {
+						node.children[i] = dictionary[children];
+
+						if (dictionary[children].mother === children) {
+							dictionary[children].isFemale = true;
+						}
+					} else if (!(children instanceof Node)) {
+						var leaf = new Node(null, children);
+						dictionary[children] = leaf;
+						node.children[i] = leaf;
+					}
+				}
+			}
+
+			return dictionary;
+		}
+
+		function rootFinder(familyTree, dictionary) {
+			var root = null;
+			for (i = 0; i < familyTree.length; i+=1) {
+				var mother = familyTree[i].mother;
+				var father = familyTree[i].father;
+				var isRoot = true;
+
+				for (j = 0; j < familyTree.length; j += 1) {
+					if (i == j) {
+						continue;
+					}
+
+					if (familyTree[j].hasChild(mother) || familyTree[j].hasChild(father)) {
+						isRoot = false;
+						break;
+					}
+				}
+
+				if (isRoot) {
+					root = familyTree[i];
+					break;
+				}
+			}
+
+			return dictionary[root.mother];
+		}
+
+		function drawFamilyTree(layer, treeRoot) {
+			var queue = [];
+			treeRoot.level = treeStart;
+			treeRoot.posX = posX;
+			queue.push(treeRoot);
+
+			while (queue.length>0) {
+				var node = queue.shift();
+
+				for (i = 0; i < node.children.length; i+=1) {
+					var children = node.children[i];
+					children.level = node.level + nextBranch;
+					children.number = i;
+
+					var paddingRight = 0
+					if (node.children.length>1) {
+						paddingRight = stepToNextNode * (node.children.length - 1);
+					}
+
+					children.posX = node.posX + positionXStep * i - paddingRight;
+					queue.push(node.children[i]);
+				}
+
+				drawNextBranch(layer, node);
+			}
+		}
+
+		function drawNextBranch(layer, node) {
+			if (node.father) {
+				addFigureToLayer(layer, node.posX, node.level, node.father || "", 5);
+			}
+
+			if (node.mother) {
+				addFigureToLayer(layer, node.posX + stepToNextNode, node.level, node.mother || "", 17);
+			}
+
+			if (node.father && node.mother) {
+				var line = getLine(node.posX, node.level);
+				layer.add(line);
+			}
+			
+			for (i = 0; i < node.children.length; i+=1) {
+				var children = node.children[i];
+				var currentX = children.posX + nodeWidth / 2;
+
+				if (children.father === null || children.isFemale) {
+					currentX += stepToNextNode;
+				}
+
+				connectParentsWithChilds(node.posX - 20, node.level,
+					currentX - 50, children.level - 1, layer);
+			}
+		}
+
+		function connectParentsWithChilds(leftParentX, leftParentY, childX, childY, layer){
+			var startX = leftParentX + nodeWidth * 1.25,
+				startY = leftParentY + nodeHeight / 2 - 4,
+				endX = childX + nodeWidth / 2,
+				endY = childY;
+
+			//var line = new Kinetic.Line({
+			//	points: [startX, startY, endX, endY],
+			//	// points: [0,0, 10,10],
+			//	stroke: 'red',
+			//	strokeWidth: 1,
+			//	lineJoin: 'round',
+			//	tension: 1
+			//});
+
+			//layer.add(line);
+
+			innerGetBezierLine(startX, startY, endX, endY);
+
+			function innerGetBezierLine(stX, stY, eX, eY) {
+				var beizerCPdx = Math.abs(eX - stX) / 10;
+				var beizerCPdY = Math.abs(eY - stY) * 0.95;
+				var currLine = new Kinetic.Shape({
+					drawFunc: function (context) {
+						context.beginPath();
+						context.moveTo(stX, stY);
+						context.bezierCurveTo(stX + beizerCPdx, stY + beizerCPdY,
+							eX - beizerCPdx, eY - beizerCPdY,
+							eX, eY);
+						context.strokeShape(this);
+						context.beginPath();
+						context.lineTo(eX + 5, eY - 5);
+						context.lineTo(eX - 5, eY - 5);
+						context.lineTo(eX, eY);
+						context.fillShape(this);
+					},
+					strokeWidth: 1,
+					fill: '#77B300',
+					stroke: '#77B300',
+				});
+
+				layer.add(currLine);
+			}
+		}
+
+		function addFigureToLayer(layer, posX, posY, text, radius) {
+			var nodeText = getNodeText(posX, posY, text);
+			var nodeFigure = getRectangle(posX, posY, nodeText.height(), radius);
+			layer.add(nodeFigure);
+			layer.add(nodeText);
+		}
+
+		function getLine(posX, posY) {
+			var line = new Kinetic.Line({
+				poinis: [0, 0, nodeWidth - stepToNextNode, 0],
+				stroke: 'blue',
+				strokeWidth: 7
+			});
+			line.move({
+				x: posX + stepToNextNode,
+				y: posY + nodeHeight / 2 - 5
+			});
+			return line;
+		}
+
+		function getRectangle(posX, posY, height, radius){
+			var rect = new Kinetic.Rect({
+				x: posX,
+				y: posY,
+				width: nodeWidth,
+				height: height,
+				cornerRadius: radius,
+				stroke: 'blue',
+				strokeWidth: 1
+			});
+
+			return rect;
+		}
+
+		function getNodeText(posX, posY, text) {
+			var nodeText = new Kinetic.Text({
+				x: posX,
+				y: posY,
+				width: nodeWidth,
+				padding: 10,
+				text: text,
+				fontSize: fontSize,
+				fill: 'black',
+				align: 'center'
+			});
+			return nodeText;
+		}
+
+		function Node(mother, father, children) {
+			this.mother = mother;
+			this.father = father;
+			this.children = children || [];
+			this.isFemale = false;
+			return this;
+		}
+		Node.prototype.hasChild = function (name) {
+			for (i = 0; i < this.children.length; i += 1) {
+				children = this.children[i];
+				if (children.mother === name || children.father === name) {
+					return true;
+				}
+			}
+		};
+	</script>-->
+</body>
+</html>

@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <p>Write an if statement that examines two integer variables and exchanges their values if the first one is greater than the second one.</p>
+    <div id="inputdiv">
+        <div class="input">
+            <label for="tb-first">First Number: </label>
+            <input type="text" id="tb-first" />
+        </div>
+        <div class="input">
+            <label for="tb-second">Second Number: </label>
+            <input type="text" id="tb-second" />
+        </div>
+        <div id="inputbutton">
+            <a href="#" onclick="onFindButtonClick()">Find</a>
+        </div>
+    </div>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function onFindButtonClick() {
+            var firstNumber = jsConsole.readInteger("#tb-first");
+            var secondNumber = jsConsole.readInteger("#tb-second");
+
+            if (firstNumber > secondNumber) {
+                var temporal = secondNumber;
+                secondNumber = firstNumber;
+                firstNumber = temporal;
+                jsConsole.writeLine('The first number is greater. Lets exchange them. \nNow The First is ' + firstNumber + ' and the second is ' + secondNumber + '.');
+            }
+            else if (firstNumber < secondNumber) {
+                jsConsole.writeLine('The second number is greater. No changes are needed.');
+            }
+            else {
+                jsConsole.writeLine('The numbers are equal.');
+            }
+        }
+    </script>
+</body>
+</html>

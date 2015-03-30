@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+	<body>
+		<div id="root">
+			<div>
+				<label for="tb-name">Name:</label>
+				<input id="tb-name" name="tb-name" type="text" />
+
+				<label for="tb-grade">Grade:</label>
+				<input id="tb-grade" name="tb-grade" type="number" min='1' max='12' />
+
+				<button id='btn-add-student'>Add new</button>
+			</div>
+			<div>
+				<label for="tb-id">ID:</label>
+				<input id="tb-id" name="tb-id" type="text" />
+				<button id='btn-remove-student'>Remove</button>
+			</div>
+			<div class="messages">
+				<strong class="message success">
+				</strong>
+				<strong class="message error">
+				</strong>
+			</div>
+			<div id="students-container"></div>
+		</div>
+		<script src="Scripts/libs/require.js" data-main="Scripts/app03"></script>
+	</body>
+</html>

@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <form method="post" action="apply-now.php">
+        <fieldset>
+            <legend>Fill Form</legend>
+            <table cellspacing="0" cellpadding="2" border="1" style="border-color:gray">
+                <tfoot style="border-color: Background; background-color: rgb(198, 219, 162);">
+                    <tr style="border-color: Background;">
+                        <td colspan=" 4" style="text-align:center; width: 40%;">
+                            <button type="submit">Submit</button>
+                            <button type="reset">Clear This Form</button>
+                        </td>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    <tr>
+                        <td>
+                            <label for="lName">Last Name</label>
+                        </td>
+                        <td colspan="3">
+                            <input type="text" name="lName" id="lName" required="required" placeholder="Last Name" style="width:50%" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="fName">First Name</label>
+                        </td>
+                        <td colspan="3">
+                            <input type="text" name="fName" id="fName" required="required" placeholder="First Name" style="width:50%" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="adress">Adress</label>
+                        </td>
+                        <td colspan="3">
+                            <textarea name="adress" id="adress" required="required" placeholder="Your adress" style="width:85%"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="city">City</label>
+                        </td>
+                        <td>
+                            <input type="text" name="city" id="city" required="required" placeholder="City" />
+                        </td>
+                        <td>
+                            <label for="state">State</label>
+                        </td>
+                        <td>
+                            <input type="text" name="state" id="state" required="required" placeholder="State" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="zipPost">Zip/Postal Code</label>
+                        </td>
+                        <td colspan="3">
+                            <input type="number" maxlength="4" name="zipPost" id="zipPost" placeholder="Post code" style="width:20%"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="country">Country</label>
+                        </td>
+                        <td colspan="3">
+                            <select name="country" id="country" style="width:50%">
+                                <option value="BG">Bulgaria</option>
+                                <option value="US">Unated States</option>
+                                <option value="CH">China</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="phone">Phone</label>
+                        </td>
+                        <td colspan="3">
+                            +(
+                            <input type="number" maxlength="3" name="CountryCode" id="phone" placeholder="+359" style="width:10%" />
+                            )
+                            <input type="number" maxlength="2" name="AreaCode" id="CountryCode" placeholder="88" style="width:10%" />
+                            -
+                            <input type="number" maxlength="7" name="phone" id="AreaCode" placeholder="8080808" style="width:20%" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="email">E-Mail</label>
+                        </td>
+                        <td colspan="3">
+                            <input type="email" name="email" id="email" placeholder="example@somedomain.com" style="width:50%" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="Bday">Birth Date</label>
+                        </td>
+                        <td colspan="3">
+                            Month
+                            <input type="number" maxlength="2" name="BdayMonth" id="Bday" style="width:5%" />
+                            Day
+                            <input type="number" maxlength="2" name="BdayDay" id="BdayDay" style="width:5%" />
+                            Year (4 digits)
+                            <input type="number" maxlength="4" name="BdayYear" id="BdayYear" style="width:10%" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="gender">Gender</label>
+                        </td>
+                        <td colspan="3">
+                            <select name="gender" id="gender" style="width:15%">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                           Starting date
+                        </td>
+                        <td colspan="3">
+                            <label for="spring">Spring 2006</label>
+                            <input type="radio" name="date" id="spring" value="spring" />
+                            <label for="summer">Summer 2006</label>
+                            <input type="radio" name="date" id="summer" value="summer" />
+                            <label for="autumn">Autumn 2014</label>
+                            <input type="radio" name="date" id="autumn" value="autumn" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="comments">Comments/Questions</label>
+                        </td>
+                        <td colspan="3">
+                            <textarea name="comments" id="comments" placeholder="Plese send me more info about the lodging." style="width:85%"></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </fieldset>
+    </form>
+</body>
+</html>

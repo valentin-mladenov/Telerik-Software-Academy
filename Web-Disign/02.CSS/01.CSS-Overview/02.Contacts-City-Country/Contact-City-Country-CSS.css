@@ -1,0 +1,34 @@
+﻿body {
+    font-family:Arial;
+}
+
+table {
+    border-color:gray;
+    
+}
+
+th {
+    text-align:left;
+    font-weight:normal;
+    color:white;
+    font-size:15px;
+    background-color:rgb(87, 186, 6);
+    border-color:gray;
+    border-left: solid 1px;
+    border-left-color:lightgray;
+    width:150px;
+}
+
+td {
+    border-left: solid 1px;
+    border-left-color:lightgray
+}
+
+img {
+    height: 11px;
+}
+
+tr:nth-child(2n) {
+    background-color:rgb(236, 236, 216);
+}
+

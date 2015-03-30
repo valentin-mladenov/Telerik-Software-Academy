@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<script src="scripts/string-extensions.js"></script>
+</head>
+<body>
+	<p>Write a function that replaces non breaking white-spaces in a text with &nbsp;.</p>
+	<div id="inputdiv">
+		<div class="input">
+			<label for="tb-first">Text: </label>
+			<input type="text" id="tb-first" />
+		</div>
+		<div class="input">
+			<label for="tb-second">Old symbol: </label>
+			<input type="text" id="tb-second" />
+		</div>
+		<div class="input">
+			<label for="tb-third">New symbol: </label>
+			<input type="text" id="tb-third" />
+		</div>
+		<div id="inputbutton">
+			<a href="#" onclick="onFindButtonClick()">Find</a>
+		</div>
+	</div>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function onFindButtonClick() {
+			function changeAllSymbol(text, oldsymbol, newsymbol) {
+				var result = '';
+				for (var i = 0; i < text.length; i+=1) {
+					if (text[i] === oldsymbol) {
+						result += newsymbol;
+					} else {
+						result += text[i];
+					}
+				}
+				return result;
+			}
+
+			//var text = jsConsole.read('#tb-first');
+			//var oldsymbol = jsConsole.read('#tb-second');
+			//var newsymbol = jsConsole.read('#tb-third');
+
+
+			//test
+			var text = 'We are living in an yellow submarine. We don\'t have anything else. Inside the submarine is very tight. So we are drinking all the day. We will move out of it in 5 days.';
+			var oldsymbol = ' ', newsymbol = '&nbsp;';
+
+			var formatedText = changeAllSymbol(text, oldsymbol, newsymbol);
+
+			jsConsole.writeLine(formatedText);
+		}
+	</script>
+</body>
+</html>

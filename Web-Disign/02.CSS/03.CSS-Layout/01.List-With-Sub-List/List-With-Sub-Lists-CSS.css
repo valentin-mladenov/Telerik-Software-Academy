@@ -1,0 +1,27 @@
+﻿body {
+    margin:0;
+    padding:0;
+}
+
+ul {
+    list-style-type:none;
+}
+
+p {
+    display:inline;
+}
+
+p:hover {
+    text-decoration:underline;
+}
+
+ul li ul {
+    visibility:collapse;
+    display:none;
+}
+
+ul li:hover ul {
+    color:gray;
+    visibility:visible;
+    display:block;
+}

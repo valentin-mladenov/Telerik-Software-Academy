@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<p>Write a function that removes all elements with a given value.</p>
+	<p>Attach it to the array type.</p>
+	<p>Read about prototype and how to attach methods.</p>
+	<div id="inputdiv">
+		<div class="input">
+			<label for="tb-first">Content to remove: </label>
+			<input type="text" id="tb-first" />
+			<label for="tb-second">Array (only space between content):</label>
+			<input type="text" id="tb-second" />
+		</div>
+		<div id="inputbutton">
+			<a href="#" onclick="onFindButtonClick()">Find</a>
+		</div>
+	</div>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function onFindButtonClick() {
+			var toRemove = jsConsole.read("#tb-first");
+			var arrInput = jsConsole.read("#tb-second");
+			var array = arrInput.split(' ');
+
+			//test
+			//var array = [5, 6, 5, 6, 8, 5, 4];
+			//var toRemove = 5;
+
+			array['remove'] = function (content) {
+				var tempArr = [];
+				for (index in array) {
+					if (array[index] === content) {
+						array.splice(index, 1);
+					}	
+				}
+			}
+
+			array.remove(toRemove);
+
+			jsConsole.writeLine(array.toString());
+		}
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+﻿body {
+    background-color:gray;
+    margin:0;
+    font-family:Arial;
+}
+
+th {
+    text-align:left;
+    font-weight:normal;
+    color:darkgray;
+    font-size:15px;
+}
+
+table {
+    font-size:80%;
+}
+
+#name, #email, #response, #lastAction, #status {
+    color:lightgray;
+}
+
+#colspaned1, #colspaned2 {
+    text-align:left;
+}
+
+#colspaned1 {
+    font-weight:bold;
+    color:red;
+}
+
+td+td, #colspaned2 {
+    color:rgb(211, 199, 130);
+}
+
+#circle {
+    width:11px;
+    height:11px;
+    background:rgb(113, 180, 122);
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px; 
+    float:left;
+}
+
+#response+td, #lastAction+td {
+    color:darkgray;
+}
+
+#status+td {
+    font-weight:bold;
+    color:orange;
+}

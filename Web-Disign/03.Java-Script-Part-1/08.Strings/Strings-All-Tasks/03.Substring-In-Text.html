@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<script src="scripts/string-extensions.js"></script>
+</head>
+<body>
+	<p>Write a JavaScript function that finds how many times a substring is contained in a given text (perform case insensitive search).</p>
+	<p>Example: The target substring is "in". The text is as follows 9.</p>
+	<p>
+		We are living in an yellow submarine. We don't have anything else.
+		Inside the submarine is very tight. So we are drinking all the day. We will move out of it in 5 days.
+	</p>
+	<div id="inputdiv">
+		<div class="input">
+			<label for="tb-first">Substring to find: </label>
+			<input type="text" id="tb-first" />
+		</div>
+		<div class="input">
+			<label for="tb-second">Text: </label>
+			<input type="text" id="tb-second" />
+		</div>
+		<div id="inputbutton">
+			<a href="#" onclick="onFindButtonClick()">Find</a>
+		</div>
+	</div>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function onFindButtonClick() {
+			var word = jsConsole.read('#tb-first');
+			var text = jsConsole.read('#tb-second').toLowerCase();
+
+			var count = 0, index = -1;
+
+			while (true)
+			{
+				index = text.indexOf(word, index + 1);
+				if (index === -1)
+				{
+					break;
+				}
+				count++;
+			}
+
+			jsConsole.writeLine('The word is find: ' + count);
+		}
+	</script>
+</body>
+</html>

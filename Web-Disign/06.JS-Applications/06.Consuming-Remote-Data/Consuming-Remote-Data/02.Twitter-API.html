@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Twitter App</title>
+	
+</head>
+<body>
+	<div id="root">
+		<div>
+			<h2>Welcome to Twitter Valjo app</h2>
+			<p>Please enter the name of the Twitter user whose timeline you wish to view.</p>
+			<p>
+				However, you must first
+				<a href="#" id="authorization">
+					Authorize with Twitter
+				</a>
+				before using this app.
+			</p>
+		</div>
+		<div>
+			<div>
+				<div>
+					<label for="username">Username: </label>
+					<input type="text" id="username" />
+				</div>
+				<div>
+					<label for="count">Number of messages: </label>
+					<input type="text" id="count" />
+				</div>
+				<div>
+					<button id="get-user">Get user</button>
+				</div>
+			</div>
+		</div>
+		<div>
+			You should see a popup window redirecting you to Twitter
+			LogIn with H1 tag:"Authorize Valjo app to use your account?"
+		</div>
+	</div>
+	<script src="Scripts/libs/require.js" data-main="Scripts/app02"></script>
+</body>
+</html>

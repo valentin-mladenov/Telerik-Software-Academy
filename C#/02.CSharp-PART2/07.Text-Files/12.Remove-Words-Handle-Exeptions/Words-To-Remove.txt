@@ -1,0 +1,6 @@
+test
+delete
+paste
+start
+finish
+mortal

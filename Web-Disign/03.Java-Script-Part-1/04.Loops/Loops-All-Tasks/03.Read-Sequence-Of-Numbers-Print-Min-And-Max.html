@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<p>Write a script that finds the max and min number from a sequence of numbers.</p>
+	<div id="inputdiv">
+		<div class="input">
+			<label for="tb-first">Number: </label>
+			<input type="text" id="tb-first" />
+			<label for="tb-second">Number: </label>
+			<input type="text" id="tb-second" />
+			<label for="tb-third">Number: </label>
+			<input type="text" id="tb-third" />
+			<label for="tb-fourth">Number: </label>
+			<input type="text" id="tb-fourth" />
+			<label for="tb-fifth">Number: </label>
+			<input type="text" id="tb-fifth" />
+		</div>
+		<div id="inputbutton">
+			<a href="#" onclick="onFindButtonClick()">Find</a>
+		</div>
+	</div>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function onFindButtonClick() {
+			var userInput1 = jsConsole.readInteger("#tb-first");
+			var userInput2 = jsConsole.readInteger("#tb-second");
+			var userInput3 = jsConsole.readInteger("#tb-third");
+			var userInput4 = jsConsole.readInteger("#tb-fourth");
+			var userInput5 = jsConsole.readInteger("#tb-fifth");
+
+			var array = [userInput1, userInput2, userInput3, userInput4, userInput5];
+
+			var minN, maxN;
+
+			for (var i = 0; i < array.length; i++) {				
+
+				if (i === 0) {
+					minN = array[i];
+					maxN = array[i];
+				}
+
+				if (array[i] < minN) {
+					minN = array[i];
+				}
+
+				if (array[i] > maxN) {
+					maxN = array[i];
+				}
+			}
+			jsConsole.writeLine("The minimum number is: " + minN);
+			jsConsole.writeLine("The maximum number is: " + maxN);
+		}
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<p>Write a function that finds all the occurrences of word in a text.</p>
+	<p>the search can case sensitive or case insensitive.<p>
+	<p> Use function overloading.</p>
+	<div id="inputdiv">
+		<div class="input">
+			<label for="tb-first">Word to find: </label>
+			<input type="text" id="tb-first" />
+			<label for="tb-second">Text: </label>
+			<textarea id="tb-second"></textarea>
+		</div>
+		<div id="inputbutton">
+			<a href="#" onclick="onFindButtonClick()">Find</a>
+		</div>
+	</div>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function integerCounter(word, array) {
+			var count = 0, i;
+
+			for (i = 0; i < array.length; i += 1) {
+				if (word == array[i]) {
+					count += 1;
+				}
+			}
+			return count;
+		}
+
+		function test() {
+			jsConsole.writeLine('---------------------------');
+			jsConsole.writeLine('Test');
+			var testText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis vehicula neque. Nunc nibh urna, cursus sit amet eleifend eget, cursus id mauris. Sed eget diam sem. Mauris in velit sagittis odio commodo facilisis nec at magna. Donec ac nulla id arcu commodo dapibus sed eget augue. Maecenas pulvinar enim non posuere ullamcorper. Curabitur congue mauris id ipsum tempus faucibus.';
+
+			//RegEx to remove dots and commas.
+			var withoutComa = testText.replace(/\,/g, ' ');
+			var witoutDot = withoutComa.replace(/\./g, ' ');
+			jsConsole.writeLine('Test arr: ' + witoutDot);
+
+			var testArr = witoutDot.split(' ')
+			var testWord = 'ipsum';
+			jsConsole.writeLine('Test number: ' + testWord);
+
+			var counter = integerCounter(testWord, testArr);
+
+			jsConsole.writeLine();
+			jsConsole.writeLine("The word " + testWord + " repeats " + counter + " times.");
+			jsConsole.writeLine('---------------------------');
+			jsConsole.writeLine();
+		}
+
+		test();
+
+		function onFindButtonClick() {
+			var word = jsConsole.read("#tb-first");
+			var text = jsConsole.read("#tb-second");
+
+			//RegEx to remove dots and commas.
+			var withoutComa = text.replace(/\,/g, ' ');
+			var witoutDot = withoutComa.replace(/\./g, ' ');
+
+			var array = witoutDot.split(' ');
+			var counter = integerCounter(word, array);
+
+			jsConsole.writeLine("The word " + word + " repeats " + counter + " times.");
+		}
+	</script>
+
+</body>
+</html>

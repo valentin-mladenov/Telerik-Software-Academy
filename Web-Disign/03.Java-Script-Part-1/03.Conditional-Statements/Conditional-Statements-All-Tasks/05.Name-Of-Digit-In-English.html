@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <p>Write script that asks for a digit (0-9) and depending on the input shows the name of that digit (in English) using a switch statement.</p>
+    <div id="inputdiv">
+        <div class="input">
+            <label for="tb-first">First Number: </label>
+            <input type="text" id="tb-first" />
+        </div>
+        <div id="inputbutton">
+            <a href="#" onclick="onFindButtonClick()">Find</a>
+        </div>
+    </div>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function onFindButtonClick() {
+            var digit = jsConsole.readFloat("#tb-first");
+
+            switch (digit) {
+                case 0:
+                    jsConsole.writeLine("The digit is Zero.");
+                    break;
+                case 1:
+                    jsConsole.writeLine("The digit is One.");
+                    break;
+                case 2:
+                    jsConsole.writeLine("The digit is Two.");
+                    break;
+                case 3:
+                    jsConsole.writeLine("The digit is Three.");
+                    break;
+                case 4:
+                    jsConsole.writeLine("The digit is Four.");
+                    break;
+                case 5:
+                    jsConsole.writeLine("The digit is  Five.");
+                    break;
+                case 6:
+                    jsConsole.writeLine("The digit is Six.");
+                    break;
+                case 7:
+                    jsConsole.writeLine("The digit is Seven.");
+                    break;
+                case 8:
+                    jsConsole.writeLine("The digit is Eight.");
+                    break;
+                case 9:
+                    jsConsole.writeLine("The digit is Nine.");
+                    break;
+                default:
+                    jsConsole.writeLine("More than one or not a digit.");
+                    break;
+            }
+        }
+    </script>
+
+</body>
+</html>

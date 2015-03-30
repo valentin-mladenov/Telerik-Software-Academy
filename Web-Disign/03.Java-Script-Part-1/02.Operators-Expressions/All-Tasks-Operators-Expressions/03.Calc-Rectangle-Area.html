@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <p>Write an expression that calculates rectangle’s area by given width and height.</p>
+    <div id="inputdiv">
+        <div class="input">
+            <label for="tb-first">Height: </label>
+            <input type="text" id="tb-first" />
+        </div>
+        <div class="input">
+            <label for="tb-second">Width: </label>
+            <input type="text" id="tb-second" />
+        </div>
+        <div id="inputbutton">
+            <a href="#" onclick="onFindButtonClick()">Find</a>
+        </div>
+    </div>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function onFindButtonClick() {
+            var height = jsConsole.readFloat("#tb-first");
+            var width = jsConsole.readFloat("#tb-second");
+            var result = height * width;
+            jsConsole.writeLine('The rectangle area with height ' + height + ' and width ' + width + ' is: ' + result.toString());
+        }
+    </script>
+
+</body>
+</html>

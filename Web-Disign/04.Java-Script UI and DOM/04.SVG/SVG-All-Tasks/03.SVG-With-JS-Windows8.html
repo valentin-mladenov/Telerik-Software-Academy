@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>SVG Homework - Task 2 - Win8</title>
+	<script src="scripts/03.Second-Task-Windows8.js"></script>
+	<style>
+		body {
+			background: #2d2d2d;
+		}
+
+		svg {
+			background: #001941;
+			margin: 20px;
+			border-radius: 15px;
+			border: 3px solid #daecf1;
+		}
+	</style>
+</head>
+<body>
+	<svg id="mySvg" width="1000" height="700"></svg>
+	<script>
+            var svg = document.getElementById("mySvg");
+
+            svg.innerHTML += createText(50, 90, "Start", "#fff", 30, "Consolas");
+            // Row 1
+            svg.innerHTML += createSmall(50, 150, "#2b86f0", "Store", "/images/store.png");
+            svg.innerHTML += createSmall(155, 150, "#66b311", "xBox", "/images/xbox.png");
+            svg.innerHTML += createBig(260, 150, "#be1c4b", "Photos", "/images/photos.png");
+            svg.innerHTML += createBig(470, 150, "#009118", "Calendar", "/images/calendar.png");
+            svg.innerHTML += createBig(720, 150, "#5e3ab8", "Music", "/images/music.png");
+            svg.innerHTML += createBig(930, 150, "#fff", "");
+
+            // Row 2
+            svg.innerHTML += createSmall(50, 255, "#5d39b5", "Maps", "/images/maps.png");
+            svg.innerHTML += createSmall(155, 255, "#2b86f0", "Internet", "/images/ie.png");
+            svg.innerHTML += createBig(260, 255, "#5d39b5", "Messaging", "/images/messaging.png");
+            svg.innerHTML += createBig(470, 255, "#d9532d", "");
+            svg.innerHTML += createBig(720, 255, "#009017", "Finance", "/images/finance.png");
+            svg.innerHTML += createBig(930, 255, "#0062a6", "");
+
+            //Row 3
+            svg.innerHTML += createBig(50, 360, "#da552c", "Videos", "/images/video.png");
+            svg.innerHTML += createBig(260, 360, "#009a18", "");
+            svg.innerHTML += createSmall(470, 360, "#000", "");
+            svg.innerHTML += createSmall(575, 360, "#2e88ee", "Solitaire", "/images/sol.png");
+            svg.innerHTML += createSmall(720, 360, "#d7512a", "Reader", "/images/reader.png");
+            svg.innerHTML += createSmall(825, 360, "#012a6a", "");
+            svg.innerHTML += createSmall(930, 360, "#267beb", "SkyDrive", "/images/drive.png");
+
+            //Row 4
+            svg.innerHTML += createBig(50, 465, "#1f7982", "Desktop");
+            svg.innerHTML += createBig(260, 465, "#2d8bef", "Weather", "/images/weather.png");
+            svg.innerHTML += createSmall(470, 465, "#bc1c4a", "Camera", "/images/camera.png");
+            svg.innerHTML += createSmall(575, 465, "#5aa518", "Xbox Smth", "/images/xbox2.png");
+            svg.innerHTML += createBig(720, 465, "#fff", "");
+
+	</script>
+</body>
+</html>
+

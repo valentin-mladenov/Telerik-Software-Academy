@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+	
+        /*task 01*/
+        jsConsole.writeLine('task01:');
+        jsConsole.writeLine('---------------------------------------');
+        var integer = 5;
+        jsConsole.writeLine(integer.toString());
+
+        var floating = 5.36;
+        jsConsole.writeLine(floating.toString());
+
+        var string = 'Аз съм българче обичам...';
+        jsConsole.writeLine(string);
+
+        var boolean = false;
+        jsConsole.writeLine(boolean.toString());
+
+        var array = [integer, floating, string, boolean];
+        jsConsole.writeLine(array);
+        
+        /*task02*/
+        jsConsole.writeLine();
+        jsConsole.writeLine('task02:');
+        jsConsole.writeLine('---------------------------------------');
+        var stringInStringNoEscapig = 'Does the fox say: "Ring-ding-ding-ding-dingeringeding!"';
+        jsConsole.writeLine(stringInStringNoEscapig);
+
+        /*task 03*/
+        jsConsole.writeLine();
+        jsConsole.writeLine('task03:');
+        jsConsole.writeLine('---------------------------------------');
+        jsConsole.writeLine(typeof (integer));
+        jsConsole.writeLine(typeof (floating));
+        jsConsole.writeLine(typeof (string));
+        jsConsole.writeLine(typeof (boolean));
+        jsConsole.writeLine(typeof (array));
+        jsConsole.writeLine(typeof(stringInStringNoEscapig));
+
+        /*task 04*/
+        jsConsole.writeLine();
+        jsConsole.writeLine('task04:');
+        jsConsole.writeLine('---------------------------------------');
+        var nullVarible = null;
+        var undefinedVarible;
+        jsConsole.writeLine(typeof (nullVarible));
+        jsConsole.writeLine(typeof (undefinedVarible));
+    </script>
+    
+    <p>I think, I made a terrable mistake somewhere. Simply dosn't load. Fix it :)</p>
+</body>
+</html>

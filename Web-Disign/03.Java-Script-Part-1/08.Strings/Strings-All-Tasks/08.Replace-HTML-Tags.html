@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<script src="scripts/string-extensions.js"></script>
+</head>
+<body>
+	<p>Write a JavaScript function that replaces in a HTML document given as string all the tags <a href="…">…</a> with corresponding tags [URL=…]…/URL]. </p>
+	<div id="inputdiv">
+		<div class="input">
+			<label for="tb-first">Text: </label>
+			<input type="text" id="tb-first" />
+		</div>
+		<div id="inputbutton">
+			<a href="#" onclick="onFindButtonClick()">Find</a>
+		</div>
+	</div>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function onFindButtonClick() {
+			function replaceTags(text) {
+				var startTag = "<a href", startClose = "\">", endTag = "</a>";
+				var newStart = "[URL", newClose = "\"]", newEnd = "[/URL]";
+
+				var startTagIndex = text.indexOf('<a');
+				while (startTagIndex > -1) {
+					text = text.replace(startTag, newStart);
+					text = text.replace(startClose, newClose);
+					text = text.replace(endTag, newEnd);
+					startTagIndex = text.indexOf(startTag, startTagIndex + 1);
+				}
+				return text;
+			}
+
+			//var text = jsConsole.read('#tb-first');
+
+			//test
+			var text = "<p>Please visit <a href=\"http://academy.telerik. com\">our site</a> to choose a training course. Also visit <a href=\"www.devbg.org\">our forum</a> to discuss the courses.</p>";
+
+			
+			
+
+			var formatedText = new String(text);
+			
+			formatedText = replaceTags(formatedText);
+
+			jsConsole.writeLine(formatedText);
+		}
+	</script>
+</body>
+</html>

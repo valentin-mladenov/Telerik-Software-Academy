@@ -1,0 +1,321 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+	<canvas id="canvas" width="1000" height="500" style="border: 2px solid black; background-color: black;"></canvas>
+	<script>
+		function drawBike() {
+			var canvas = document.getElementById('canvas'),
+			context = canvas.getContext('2d');
+
+			// the bicycle
+			context.lineWidth = '2';
+			context.fillStyle = 'lightblue';
+			context.strokeStyle = 'darkcyan';
+
+			// the first cycle
+			context.arc(100, 400, 50, 0, 2 * Math.PI);
+			context.fill();
+			context.stroke();
+			context.beginPath();
+
+			// the second cycle
+			context.arc(300, 400, 50, 0, 2 * Math.PI);
+			context.fill();
+			context.stroke();
+			context.beginPath();
+
+			// the small cycle with the pedals
+			context.arc(185, 400, 12, 0, 2 * Math.PI);
+			context.stroke();
+			context.beginPath();
+			context.moveTo(180, 390);
+			context.lineTo(173, 375);
+			context.stroke();
+			context.beginPath();
+			context.moveTo(190, 410);
+			context.lineTo(197, 425);
+			context.stroke();
+			context.beginPath();
+
+			// the bicycle frame
+			context.moveTo(100, 400);
+			context.lineTo(185, 400);
+			context.lineTo(280, 320);
+			context.lineTo(165, 320);
+			context.closePath();
+			context.stroke();
+			context.beginPath();
+
+			// the seat
+			context.moveTo(185, 400);
+			context.lineTo(160, 300);
+			context.closePath();
+			context.stroke();
+			context.beginPath();
+			context.moveTo(145, 300);
+			context.lineTo(175, 300);
+			context.stroke();
+			context.beginPath();
+
+			// the wheеl
+			context.moveTo(300, 400);
+			context.lineTo(272, 280);
+			context.closePath();
+			context.stroke();
+			context.beginPath();
+			context.moveTo(272, 280);
+			context.lineTo(240, 290);
+			context.stroke();
+			context.beginPath();
+			context.moveTo(272, 280);
+			context.lineTo(300, 260);
+			context.stroke();
+			context.beginPath();
+		}
+
+		function drawHead() {
+			var canvas = document.getElementById('canvas'),
+			context = canvas.getContext('2d');
+
+			context.lineWidth = '2';
+			context.fillStyle = 'lightblue';
+			context.strokeStyle = 'darkslateblue';
+
+			// the head
+			context.save();
+			context.scale(1,0.9);
+
+			context.arc(170, 220, 50, 0, 2 * Math.PI);
+			context.fill();
+			context.stroke();
+			context.beginPath();
+
+			context.restore();
+
+			// the mouth
+			context.save();
+			
+			context.rotate(5 * Math.PI / 180);
+			context.scale(1, 0.3);
+			context.arc(180, 680, 20, 0, 2 * Math.PI);
+			context.fill();
+			context.stroke();
+			context.beginPath();
+
+			context.restore();
+
+			// eyes
+			context.save();
+
+			context.scale(1, 0.6);
+			context.arc(140, 300, 8, 0, 2 * Math.PI);
+			context.fill();
+			context.stroke();
+			context.beginPath();
+
+			context.arc(180, 300, 8, 0, 2 * Math.PI);
+			context.fill();
+			context.stroke();
+			context.beginPath();
+
+			context.restore();
+
+			// the irises
+			context.save();
+			context.fillStyle = 'darkslateblue';
+
+			context.scale(0.4, 1);
+			context.arc(340, 180, 4, 0, 2 * Math.PI);
+			context.fill();
+			context.stroke();
+			context.beginPath();
+
+			context.arc(440, 180, 4, 0, 2 * Math.PI);
+			context.fill();
+			context.stroke();
+			context.beginPath();
+
+			context.restore();
+
+			// the nose
+			context.moveTo(160, 180);
+			context.lineTo(150, 200);
+			context.lineTo(160, 200);
+			context.stroke();
+			context.beginPath();
+		}
+
+		function drawHatCillinder() {
+			var canvas = document.getElementById('canvas'),
+			context = canvas.getContext('2d');
+
+			context.lineWidth = '2';
+			context.fillStyle = 'rgb(48, 113, 173)';
+			context.strokeStyle = 'yellowgreen';
+
+			// the perimeter of the hat
+			context.save();
+			context.scale(1, 0.2);
+
+			context.arc(170, 800, 55, 0, 2 * Math.PI);
+			context.fill();
+			context.stroke();
+			context.beginPath();
+
+			context.restore();
+
+			// the main part of the cillinder
+			context.save();
+			context.scale(1, 0.4);
+
+			context.moveTo(140, 220);
+			context.lineTo(140, 380);
+			context.arc(170, 380, 30, Math.PI, 0, true);
+			context.lineTo(200, 220);
+			context.fill();
+			context.stroke();
+			context.beginPath();
+
+			context.restore();
+
+			// the top of the cellinder
+			context.save();
+			context.scale(1, 0.4);
+
+			context.arc(170, 220, 30, 0, 2 * Math.PI);
+			context.fill();
+			context.stroke();
+			context.beginPath();
+
+			context.restore();
+		}
+
+		function drawHouse() {
+			var canvas = document.getElementById('canvas'),
+			context = canvas.getContext('2d');
+
+			context.lineWidth = '2';
+			context.fillStyle = 'darkred';
+			context.strokeStyle = 'yellowgreen';
+			
+
+			// main house
+			context.beginPath();
+			context.lineCap = "round";
+			context.moveTo(700, 200);
+			context.lineTo(900, 200);
+			context.lineTo(800, 100);
+			context.lineTo(700, 200);
+			context.lineTo(700, 350);
+			context.lineTo(900, 350);
+			context.lineTo(900, 200);
+			context.fill();
+			context.stroke();
+
+			// main windows
+			context.beginPath();
+			context.fillStyle = 'yellowgreen';
+			context.strokeStyle = 'darkred';
+			context.rect(725, 225, 60, 40);
+			context.rect(815, 225, 60, 40);
+			context.rect(815, 285, 60, 40);
+			context.fill();
+			context.stroke();
+
+			// windows inner parts
+			context.beginPath();
+			context.moveTo(725, 245);
+			context.lineTo(785, 245);
+			context.stroke();
+
+			context.beginPath();
+			context.moveTo(755, 225);
+			context.lineTo(755, 265);
+			context.stroke();
+
+			context.beginPath();
+			context.moveTo(815, 245);
+			context.lineTo(875, 245);
+			context.stroke();
+
+			context.beginPath();
+			context.moveTo(845, 225);
+			context.lineTo(845, 265);
+			context.stroke();
+
+			context.beginPath();
+			context.moveTo(815, 305);
+			context.lineTo(875, 305);
+			context.stroke();
+
+			context.beginPath();
+			context.moveTo(845, 285);
+			context.lineTo(845, 325);
+			context.stroke();
+
+			// door
+			context.strokeStyle = 'yellowgreen';
+			context.fillStyle = 'darkred';
+			context.beginPath();
+			context.moveTo(730, 350);
+			context.lineTo(730, 300);
+			context.save();
+
+			context.scale(1, 0.4);
+
+			context.arc(760, 750, 30, Math.PI, 2* Math.PI);
+
+			context.restore();
+
+			context.lineTo(790, 350);
+			context.stroke();
+
+			context.beginPath();
+			context.moveTo(760, 350);
+			context.lineTo(760, 290);
+			context.stroke();
+
+			// door knobs
+			context.beginPath();
+			context.arc(768, 330, 3, 0, 2 * Math.PI);
+			context.stroke();
+			context.beginPath();
+			context.arc(752, 330, 3, 0, 2 * Math.PI);
+			context.stroke();
+
+			// chimney
+			context.beginPath();
+			context.rect(850, 100, 20, 80);
+			context.fill();
+			context.beginPath();
+			context.moveTo(850, 180);
+			context.lineTo(850, 100);
+			context.save();
+
+			context.scale(1, 0.2);
+
+			context.arc(860, 500, 10, Math.PI, 2 * Math.PI);
+			context.arc(860, 500, 10, 0, Math.PI);
+
+			context.restore();
+			context.fill();
+			context.stroke();
+
+			context.beginPath();
+			context.moveTo(870, 100);
+			context.lineTo(870, 180);
+			context.stroke();
+
+			
+		}
+
+		drawBike();
+		drawHead();
+		drawHatCillinder();
+		drawHouse();
+	</script>
+</body>
+</html>

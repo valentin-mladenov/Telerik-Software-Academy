@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<p>Write functions for working with shapes in standard Planar coordinate system.</p>
+	<p>Points are represented by coordinates P(X, Y).</p>
+	<p>Lines are represented by two points, marking their beginning and ending L(P1(X1,Y1), P2(X2,Y2)).</p>
+	<p>Calculate the distance between two points.</p>
+	<p>Check if three segment lines can form a triangle.</p>
+	<p style="font-weight:bold;">Points must be enered in folowing format: 'X Y' (Number,Space,Number)</p>
+	<div id="inputdiv">
+		<div class="input">
+			<label for="tb-first">Point A: </label>
+			<input type="text" id="tb-first" />
+			<label for="tb-second">Point B:</label>
+			<input type="text" id="tb-second" />
+			<label for="tb-third">Point C:</label>
+			<input type="text" id="tb-third" />
+		</div>
+		<div id="inputbutton">
+			<a href="#" onclick="onFindButtonClick()">Find</a>
+		</div>
+	</div>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function pointCreator(input) {
+			return {
+				X: input[0],
+				Y: input[2],
+				toString: function () { return 'P(' + this.X + ',' + this.Y + ')';}
+			};
+		}
+
+		function lineCreator(point1, point2) {
+			var length = Math.sqrt((point1.X - point2.X) * (point1.X - point2.X) +
+						 (point1.Y - point2.Y) * (point1.Y - point2.Y));
+
+			return { 
+				point1: point1,
+				point2: point2,
+				length: length,
+				toString: function () { return 'L(' + this.point1 + '), ' + this.point2 + '))'; }
+			}
+		}
+
+		function intersection(line1, line2) {
+			//first finding distence between points
+			var dist1x, dist1y, dist2x, dist2y;
+
+			dist1x = line1.point2.X - line1.point1.X;
+			dist1y = line1.point2.Y - line1.point1.Y;
+			dist2x = line2.point2.X - line2.point1.X;
+			dist2y = line2.point2.Y - line2.point1.Y;
+
+			//proubability
+			var s, t;
+
+			s = (-dist1y * (line1.point1.X - line2.point1.X) + dist1x * (line1.point1.Y - line2.point1.Y)) / (-dist2x * dist1y + dist1x * dist2y);
+			t = (dist2x * (line1.point1.Y - line2.point1.Y) - dist2y * (line1.point1.X - line2.point1.X)) / (-dist2x * dist1y + dist1x * dist2y);
+
+			if (s >= 0 && s <= 1 && t >= 0 && t <= 1) {
+				//intersection detected
+				return true;
+			}
+			return false; // No intersection
+		}
+
+		function triangleCheck(line1, line2, line3) {
+			var intersect12 = intersection(line1, line2);
+			var intersect23 = intersection(line2, line3);
+			var intersect31 = intersection(line3, line1);
+
+			if (intersect12 && intersect23&& intersect31) {
+				return true;
+			}
+			return false;
+		}
+
+		function onFindButtonClick() {
+			var inputA = jsConsole.read("#tb-first");
+			var inputB = jsConsole.read("#tb-second");
+			var inputC = jsConsole.read("#tb-third");
+
+			//test
+			//var inputA = ('2 3');
+			//var inputB = ('5 6');
+			//var inputC = ('7 8');
+
+			var pointA = pointCreator(inputA);
+			var pointB = pointCreator(inputB);
+			var pointC = pointCreator(inputC);
+
+			var lineAB = lineCreator(pointA, pointB);
+			var lineBC = lineCreator(pointB, pointC);
+			var lineCA = lineCreator(pointC, pointA);
+			
+			var triangle = triangleCheck(lineAB, lineBC, lineCA);
+
+			jsConsole.writeLine(pointA);
+			jsConsole.writeLine(pointB);
+			jsConsole.writeLine(pointC);
+			
+			jsConsole.writeLine(lineAB.toString() +' with length '+lineAB.length.toFixed(2));
+			jsConsole.writeLine(lineBC.toString() + ' with length ' + lineBC.length.toFixed(2));
+			jsConsole.writeLine(lineCA.toString() + ' with length ' + lineCA.length.toFixed(2));
+
+			jsConsole.writeLine('Is triangle: ' + triangle);
+		}
+	</script>
+
+</body>
+</html>

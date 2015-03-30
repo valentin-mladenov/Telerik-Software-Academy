@@ -1,0 +1,67 @@
+1. There are 4 types od Databases:
+	1. Hierarchical
+	2. Network
+	3. Relational
+	4. Object-oriented
+
+2. Main functions by RDBMS:
+	1. Creating, altering and deleting tables and relationships between them
+	2. Adding, changing, deleting, searching and retrieving of data in the tables
+
+3. Definition of "table" in database term is:
+	Database tables consist of data, arranged in rows and columns. All rows have the
+	same structure. Columns have name and type (number, string, etc.). The schema of
+	a table is an ordered sequence of column specifications (name and type).
+
+4. The difference between a primary and a foreign key is:
+	Primary key is a column of the table that uniquely identifies its rows 
+	(usually its is a number).
+	The foreign key is an identifier of a record located in another table 
+	(usually its primary key).
+
+5. The differences of relationships between tables in relational databases are:
+	1. Relationship one-to-many or many-to-one
+	2. Relationship many-to-many
+	3. Relationship one-to-one
+
+6. When is a certain database schema normalized? What are the advantages of normalized databases?
+	1. Normalized relational schema is without repeating data.
+	2. Advantages are easer menagment of the stored data.
+
+7. What are database integrity constraints and when are they used?
+	1. Primary key constraint: 
+		Ensures that the primary key of a table has unique value for each table row
+	2. Unique key constraint:
+		Ensures that all values in a certain column (or a group of columns) are unique
+	3. Foreign key constraint:
+		Ensures that the value in given column is a key from another table
+	4. Check constraint:
+		Ensures that values in a certain column meet some predefined condition
+
+8. Point out the pros and cons of using indexes in a database?
+	Pros: Searching is blazing fast (log) and can be clustered or non-clustered.
+	Cons: Adding and deleting is slower!
+
+9. What's the main purpose of the SQL language?
+	Creating, altering, deleting tables and other objects in the database
+	Searching, retrieving, inserting, modifying and deleting table data (rows)
+
+10. What are transactions used for?
+	The best example is the bank transfer: Person A pay person B an amont of money.
+	First step is witdrawal trom account A. Second step is deposit in account B.
+	If some step is cancelled neighter witdrawal or deposit happens.
+
+11. What is a NoSQL database?
+	NoSQL is document-based model, but support CRUD operations (create, read, update, delete),
+	indexing and querying and concurrency  and transactions. Very optimized for append/retrive,
+	with great performance and scalability.
+
+12. Explain the classical non-relational data models.
+	Data stored as documents. Single entity (document) is a single record. Documents do not have
+	a fixed structure. 
+
+13. Give few examples of NoSQL databases and their pros and cons.
+	Example: "Name: Svetlin Nakov, Gender: male, Phone: +359333777555, Address: - Street: Al. Malinov 31
+		- Post Code: 1729 - Town: Sofia - Country: Bulgaria, Email: nakov@abv.bg, Site: www.nakov.com"
+	Pros: Everything is in one place. Can be quick to delete or add.
+	Cons: Searching for that one document can be very slow.

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dirs>
+  <folder>Debug</folder>
+  <folder>Release</folder>
+  <folder>FilesAndFolders</folder>
+  <folder>TempPE</folder>
+  <file>09.Traverse-Directory.csproj.FileListAbsolute.txt</file>
+  <file>09.Traverse-Directory.csprojResolveAssemblyReference.cache</file>
+  <file>09.Traverse-Directory.exe</file>
+  <file>09.Traverse-Directory.pdb</file>
+  <file>DesignTimeResolveAssemblyReferencesInput.cache</file>
+  <file>TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs</file>
+  <file>TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs</file>
+  <file>TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs</file>
+  <file>Traverse-Directory.csproj.FileListAbsolute.txt</file>
+  <folder>Properties</folder>
+  <file>App.config</file>
+  <file>CurrentDir.xml</file>
+  <file>CurrentDirXDoc.xml</file>
+  <file>CurrentDirXMLWriter.xml</file>
+  <file>Traverse-Directory.csproj</file>
+  <file>TraverseDirectory.cs</file>
+</dirs>

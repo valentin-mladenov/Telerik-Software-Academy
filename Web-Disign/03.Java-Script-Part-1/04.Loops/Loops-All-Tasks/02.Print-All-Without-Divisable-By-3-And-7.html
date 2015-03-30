@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<p>Write a script that prints all the numbers from 1 to N, that are not divisible by 3 and 7 at the same time.</p>
+	<div id="inputdiv">
+		<div class="input">
+			<label for="tb-first">Number: </label>
+			<input type="text" id="tb-first" />
+		</div>
+		<div id="inputbutton">
+			<a href="#" onclick="onFindButtonClick()">Find</a>
+		</div>
+	</div>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function onFindButtonClick() {
+			var userInput = jsConsole.readInteger("#tb-first");
+			var count = 0; //added just for print format
+
+			for (var i = 1; i < userInput; i++) {
+
+				if (i % 21 === 0 && count !== 0) { // not needed just to format printing
+					jsConsole.write(', ' + i.toString());
+				}
+				else if (i % 21 === 0 && count === 0) {
+					jsConsole.write(i.toString());
+					count++;
+				}
+			}
+
+			if (userInput % 21 === 0) {
+				jsConsole.write(userInput.toString() + '.');
+			}
+			else {
+				jsConsole.writeLine('.');
+			}
+		}
+	</script>
+</body>
+</html>

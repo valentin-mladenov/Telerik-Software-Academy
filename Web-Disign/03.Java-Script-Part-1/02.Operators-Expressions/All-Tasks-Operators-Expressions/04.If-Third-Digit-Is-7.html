@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <p>Write an expression that checks for given integer if its third digit (right-to-left) is 7. E. g. 1732  true.</p>
+    <div id="inputdiv">
+        <div class="input">
+            <label for="tb-first">Number: </label>
+            <input type="text" id="tb-first" />
+        </div>
+        <div id="inputbutton">
+            <a href="#" onclick="onFindButtonClick()">Find</a>
+        </div>
+    </div>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function onFindButtonClick() {
+            var number = jsConsole.readFloat("#tb-first");
+            var result = (Math.floor(number / 100)) % 10;
+
+            if (result==7) {
+                jsConsole.writeLine('Is 7, the third digit of number ' + number + ': true.');
+            }
+            else {
+                jsConsole.writeLine('Is 7, the third digit of number ' + number + ': false.');
+            }
+        }
+    </script>
+</body>
+</html>

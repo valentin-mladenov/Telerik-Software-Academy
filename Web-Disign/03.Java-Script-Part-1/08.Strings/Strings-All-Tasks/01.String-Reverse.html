@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<script src="scripts/string-extensions.js"></script>
+</head>
+<body>
+	<p>Write a JavaScript function reverses string and returns it.</p>
+	<p>Example: "sample"  "elpmas".</p>
+	<div id="inputdiv">
+		<div class="input">
+			<label for="tb-first">String to reverse: </label>
+			<input type="text" id="tb-first" />
+		</div>
+		<div id="inputbutton">
+			<a href="#" onclick="onFindButtonClick()">Find</a>
+		</div>
+	</div>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function onFindButtonClick() {
+			var userInput = jsConsole.read('#tb-first');
+
+			var reversed = [];
+
+			for (var i = userInput.length; i >= 0; i-=1) {
+				reversed.push(userInput[i]);
+			}
+
+			jsConsole.writeLine(reversed.join(''));
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <p>Write an expression that checks if given print (x,  y) is within a circle K(O, 5).</p>
+    <div id="inputdiv">
+        <div class="input">
+            <label for="tb-first">Point X: </label>
+            <input type="text" id="tb-first" />
+        </div>
+        <div class="input">
+            <label for="tb-second">Point Y: </label>
+            <input type="text" id="tb-second" />
+        </div>
+        <div id="inputbutton">
+            <a href="#" onclick="onFindButtonClick()">Find</a>
+        </div>
+    </div>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function onFindButtonClick() {
+            var ponitX = jsConsole.readFloat("#tb-first");
+            var pointY = jsConsole.readFloat("#tb-second");
+            var CircleRadius = 5;
+            var pointRadius = Math.sqrt(ponitX * ponitX + pointY * pointY); //Pitagor theorem
+
+            if (pointRadius <= CircleRadius) {
+                jsConsole.writeLine('The point is within the circle.')
+            }
+            else {
+                jsConsole.writeLine('The point is outside the circle.')
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+	<script src="Scripts/handlebars.min.js"></script>
+	<script src="Scripts/handlebars.amd.min.js"></script>
+	<style type="text/css">
+		table, td,th{
+			border:1px solid black;
+			border-collapse:collapse;
+			font-family:Consolas;	
+		}
+
+		.table thead tr{
+			background-color:cornflowerblue;
+			color:white;
+			font-family:Consolas;
+		}
+		tbody tr:nth-of-type(2n){
+			background-color:cadetblue;
+			color:black;
+			font-family:Consolas;	
+		}
+	</style>
+</head>
+<body>
+	<script id="table-template" type="text/x-handlebars-template">
+		<table class="table">
+			{{#thead}}
+			<thead>
+				<tr><th>{{number}}</th><th>{{title}}</th><th>{{date1}}</th><th>{{date2}}</th></tr>
+			</thead>
+			{{/thead}}
+			<tbody>
+				{{#tbody}}
+				<tr><td>{{count}}</td><td>{{title}}</td><td>{{date1}}</td><td>{{date2}}</td></tr>
+				{{/tbody}}
+			</tbody>
+		</table>
+	</script>
+	<script>
+		var tableTemplate = document.getElementById('table-template');
+		var templateString = tableTemplate.innerHTML;
+		var template = Handlebars.compile(templateString);
+
+		var tableHead = [{
+			number: '№',
+			title: 'Title',
+			date1: 'Date #1',
+			date2: 'Date #2',
+		}];
+
+		var tablebody = [{
+			count: '1',
+			title: 'Course Interotuction',
+			date1: 'Wed 18:00, 28-May-2014',
+			date2: 'Thu 14:00, 29-May-2014',
+		}, {
+			count: '2',
+			title: 'Document Object Model',
+			date1: 'Wed 18:00, 28-May-2014',
+			date2: 'Thu 14:00, 29-May-2014',
+		}, {
+			count: '3',
+			title: 'HTML5 Canvas',
+			date1: 'Thu 18:00, 29-May-2014',
+			date2: 'Fri 14:00, 30-May-2014',
+		}, {
+			count: '4',
+			title: 'Kinetic JS Overview',
+			date1: 'Thu 18:00, 29-May-2014',
+			date2: 'Fri 14:00, 30-May-2014',
+		}, {
+			count: '15',
+			title: 'SVG and Raphael',
+			date1: 'Wed 18:00, 05-Jun-2014',
+			date2: 'Thu 14:00, 06-Jun-2014',
+		}];
+
+		var tableHTML = template({
+			thead: tableHead,
+			tbody: tablebody
+		});
+		document.body.innerHTML += tableHTML;
+
+	</script>
+</body>
+</html>

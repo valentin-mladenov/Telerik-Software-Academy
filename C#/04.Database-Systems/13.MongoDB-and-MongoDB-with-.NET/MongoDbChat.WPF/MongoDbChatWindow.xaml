@@ -1,0 +1,15 @@
+﻿<Window x:Class="MongoDbChat.WPF.MongoDbChatWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="LoginWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="201*"/>
+            <ColumnDefinition Width="316*"/>
+        </Grid.ColumnDefinitions>
+        <Button Name="sendMessage" Content="Send Message" HorizontalAlignment="Left" Margin="156,280,0,0" VerticalAlignment="Top" Width="150" Height="29" Click="SendMessage" Grid.Column="1"/>
+        <TextBox Name="sendTextBox" HorizontalAlignment="Left" Height="29" Margin="10,280,0,0" TextWrapping="Wrap" Text="UserName" VerticalAlignment="Top" Width="342" RenderTransformOrigin="0.483,2.836" Grid.ColumnSpan="2"/>
+        <TextBox Name="allMassages" Grid.ColumnSpan="20" HorizontalAlignment="Left" Height="265" Margin="10,10,0,0" VerticalAlignment="Top" Width="497" />
+
+    </Grid>
+</Window>

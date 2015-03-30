@@ -1,0 +1,21 @@
+TASK 1: What is the expected running time of the following C# code? Explain why.
+ Assume the array's size is n.
+--------------------------------------------
+long Compute(int[] arr)
+{
+    long count = 0;
+    for (int i=0; i<arr.Length; i++)
+    {
+        int start = 0, end = arr.Length-1;
+        while (start < end)
+            if (arr[start] < arr[end])
+                { 
+			start++; count++; 
+		}
+            else 
+                end--;
+    }
+    return count;
+}
+--------------------------------------------
+Answer: Expected running time is 

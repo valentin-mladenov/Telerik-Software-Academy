@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<p>Write a script that prints all the numbers from 1 to N.</p>
+	<div id="inputdiv">
+		<div class="input">
+			<label for="tb-first">Number: </label>
+			<input type="text" id="tb-first" />
+		</div>
+		<div id="inputbutton">
+			<a href="#" onclick="onFindButtonClick()">Find</a>
+		</div>
+	</div>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function onFindButtonClick() {
+			var userInput = jsConsole.readInteger("#tb-first");
+
+			for (var i = 1; i < userInput; i++) {
+				jsConsole.write(i.toString() + ', ');
+			}
+			jsConsole.writeLine(userInput.toString() + '.')
+		}
+	</script>
+</body>
+</html>

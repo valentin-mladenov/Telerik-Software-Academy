@@ -1,0 +1,6 @@
+Please copy images directory from the main folder to directories:
+
+02.Web-Gallery-LESS
+02.Web-Gallery-SASS
+
+So they can be seen correctly.

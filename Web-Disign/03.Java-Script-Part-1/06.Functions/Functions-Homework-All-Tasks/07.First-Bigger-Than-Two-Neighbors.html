@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<p>
+		Write a function that returns the index of the first element in array that is bigger than its neighbors, or -1, if there’s no such element.
+	</p>
+	<p>Use the function from the previous exercise.</p>
+	<div id="inputdiv">
+		<div class="input">
+			<label for="tb-second">ARRAY (numbers split by ' '): </label>
+			<input type="text" id="tb-second" />
+		</div>
+		<div id="inputbutton">
+			<a href="#" onclick="onFindButtonClick()">Find</a>
+		</div>
+	</div>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function biggerOrNot(array) {
+			var bigger = -1, i = 0;
+
+			for (i = 1; i < array.length - 1; i += 1) {
+				if ((array[i] > array[i - 1]) && (array[i] > array[i + 1])) {
+					bigger = i;
+					break;
+				}
+			}
+			return bigger;
+		}
+
+		function test() {
+			jsConsole.writeLine('---------------------------');
+			jsConsole.writeLine('Test');
+			var testarr = [5, 6, 5, 6, 8, 5, 4];
+			jsConsole.writeLine('Test arr: ' + testarr);
+
+			var bigger = biggerOrNot(testarr);
+
+			if (bigger != -1) {
+				jsConsole.writeLine("The number at position " + bigger + " is bigger then it's two neighbors.");
+			} else {
+				jsConsole.writeLine("There is no bigger number than it's two neighbors.");
+			}
+
+			jsConsole.writeLine('---------------------------');
+			jsConsole.writeLine();
+		}
+
+
+		test();
+
+		function onFindButtonClick() {
+			var arrayStr = jsConsole.read("#tb-second");
+			var array = arrayStr.split(' ');
+
+			var bigger = biggerOrNot(array);
+
+			if (bigger != -1) {
+				jsConsole.writeLine("The number at position " + bigger + " is bigger then it's two neighbors.");
+			} else {
+				jsConsole.writeLine("There is no bigger number than it's two neighbors.");
+			}
+		}
+	</script>
+
+</body>
+</html>

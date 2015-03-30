@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<script src="Scripts/libs/jquery-2.1.1.min.js"></script>
+	<style>body {
+}
+
+#wrapper {
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 800px;
+    height: 600px;
+    margin: auto;
+    background-color: #9ba9f7;
+    border-radius: 15px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.button, .button:visited {
+    background: #222 url(overlay.png) repeat-x;
+    display: inline-block;
+    padding: 5px 10px 6px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 200px;
+    height: 42px;
+    margin: auto;
+    background-color: #9ba9f7;
+    border-radius: 15px;
+}
+
+    .button:hover {
+        background-color: #111;
+        color: #fff;
+    }
+
+    .button:active {
+        top: 1px;
+    }
+
+    .button, .button:visited,
+    .medium.button, .medium.button:visited {
+        font-size: 19px;
+        font-weight: bold;
+        line-height: 1;
+        text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+    }
+
+.super.button, .super.button:visited {
+    font-size: 39px;
+    padding: 8px 14px 9px;
+}
+
+.pink.button, .magenta.button:visited {
+    background-color: #e22092;
+}
+
+    .pink.button:hover {
+        background-color: #c81e82;
+    }
+
+#system-message {
+    display: none;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 100px;
+    margin-left: 10px;
+}
+
+#sheep-rams-message {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 140px;
+    margin-left: 10px;
+}
+
+#player-input {
+    display: none;
+    height: 50px;
+    width: 200px;
+    margin-top: 20px;
+    margin-left: 298px;
+    font-size: 35px;
+    text-align: center;
+}
+
+#nickname-input {
+    display: none;
+    height: 50px;
+    width: 200px;
+    margin-top: 20px;
+    margin-left: 298px;
+    font-size: 35px;
+    text-align: center;
+}
+
+		#try-it-button, #enter-button {
+			display: none;
+			margin-top: 330px;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<h1>Simple Number Guessing Game</h1>
+		<a class="super button pink" id="new-game-button">New Game</a>
+		<div id='system-message'>Enter four digits number</div>
+		<input type="text" maxlength="4" id="player-input" />
+		<a class="super button pink" id="try-it-button">Try it</a>
+		<a class="super button pink" id="enter-button"></a>
+		<input type="text" maxlength="10" id="nickname-input" />
+		<div id='sheep-rams-message'></div>
+	</div>
+	<script src="Scripts/Sheeps-And-Rams.js"></script>
+</body>
+</html>

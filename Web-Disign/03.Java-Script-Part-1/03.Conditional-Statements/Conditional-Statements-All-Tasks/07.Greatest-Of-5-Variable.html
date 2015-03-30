@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <p> Write a script that finds the greatest of given 5 variables.</p>
+    <div id="inputdiv">
+        <div class="input">
+            <label for="tb-first">First Number: </label>
+            <input type="text" id="tb-first" />
+        </div>
+        <div class="input">
+            <label for="tb-second">Second Number: </label>
+            <input type="text" id="tb-second" />
+        </div>
+        <div class="input">
+            <label for="tb-third">Third Number: </label>
+            <input type="text" id="tb-third" />
+        </div>
+        <div class="input">
+            <label for="tb-forth">Forth Number: </label>
+            <input type="text" id="tb-forth" />
+        </div>
+        <div class="input">
+            <label for="tb-fifth">Fifth Number: </label>
+            <input type="text" id="tb-fifth" />
+        </div>
+        <div id="inputbutton">
+            <a href="#" onclick="onFindButtonClick()">Find</a>
+        </div>
+    </div>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function onFindButtonClick() {
+            var firstNumber = jsConsole.readFloat("#tb-first");
+            var secondNumber = jsConsole.readFloat("#tb-second");
+            var thirdNumber = jsConsole.readFloat("#tb-third");
+            var forthNumber = jsConsole.readFloat("#tb-forth");
+            var fifthNumber = jsConsole.readFloat("#tb-fifth");
+
+            var greatestNumber = firstNumber;
+
+            if (greatestNumber < secondNumber)
+            {
+                greatestNumber = secondNumber;
+            }
+            if (greatestNumber < thirdNumber)
+            {
+                greatestNumber = thirdNumber;
+            }
+            if (greatestNumber < forthNumber)
+            {
+                greatestNumber = forthNumber;
+            }
+            if (greatestNumber < fifthNumber)
+            {
+                greatestNumber = fifthNumber;
+            }
+            jsConsole.writeLine("The greatest number is " + greatestNumber + ".");
+        }
+    </script>
+</body>
+</html>

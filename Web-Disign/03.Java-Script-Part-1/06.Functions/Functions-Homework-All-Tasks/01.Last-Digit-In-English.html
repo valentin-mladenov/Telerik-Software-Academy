@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<p>Write a function that returns the last digit of given integer as an English word.</p>
+	<p>Examples: 512 -> "two", 1024 -> "four", 12309 -> "nine".</p>
+	<div id="inputdiv">
+		<div class="input">
+			<label for="tb-first">Number: </label>
+			<input type="text" id="tb-first" />
+		</div>
+		<div id="inputbutton">
+			<a href="#" onclick="onFindButtonClick()">Find</a>
+		</div>
+	</div>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function onFindButtonClick() {
+			function lastDigit(number)
+			{
+				var lastDigit = (number[number.length - 1]);
+				var lastDigitName;
+
+				switch (lastDigit)
+				{
+					case '0': lastDigitName = "Zero";
+						break;
+					case '1': lastDigitName = "One";
+						break;
+					case '2': lastDigitName = "Two";
+						break;
+					case '3': lastDigitName = "Three";
+						break;
+					case '4': lastDigitName = "Four";
+						break;
+					case '5': lastDigitName = "Five";
+						break;
+					case '6': lastDigitName = "Six";
+						break;
+					case '7': lastDigitName = "Seven";
+						break;
+					case '8': lastDigitName = "Eight";
+						break;
+					case '9': lastDigitName = "Nine";
+						break;
+					default: lastDigitName = 'Not a number';
+						break;
+				}
+				return lastDigitName;
+			}
+
+			var number = jsConsole.read("#tb-first");
+			var last = lastDigit(number);
+
+			jsConsole.writeLine(last);
+		}
+	</script>
+
+</body>
+</html>

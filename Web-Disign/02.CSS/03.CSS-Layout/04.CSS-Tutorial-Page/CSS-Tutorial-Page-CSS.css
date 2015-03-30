@@ -1,0 +1,145 @@
+﻿body {
+    font-family:Verdana;
+    font-size:small;
+    background-color:#f1f1f1;
+}
+
+.body {
+    padding:9px;
+    margin:10px auto;
+    width:855px;
+    height:700px;
+    border:1px solid black;
+}
+#Head h1 {
+    margin-top: 0px;
+}
+
+#Head {
+    float:left;
+    max-width: 150px;
+    width: 150px;
+    padding-left: 5px;
+    font-size:small;
+}
+
+.lastA {
+    margin-bottom:10px;
+}
+
+a {
+    color:#971b19;
+}
+
+#home {
+    text-decoration:none;
+    color:black;
+    font-size:small;
+}
+
+h2 {
+    color:#971b19;
+    margin-bottom:0;
+    font-size:x-small;
+}
+
+#Head > a {
+    color:black;
+    display:block;
+    text-decoration:none;
+}
+
+#Main {
+    float:left;
+    background-color:white;
+    border: 1px solid gray;
+    margin-right:2px;
+    padding:3px;
+    width:500px;
+    padding-bottom:20px;
+}
+
+aside {
+    float:left;
+}
+
+aside > section {
+    width:170px;
+    display:block;
+    border:1px solid gray;
+    background-color:white;
+    margin-bottom: 1px;
+    padding:5px 3px 5px;
+}
+
+aside > section a {
+    color:#971b19;
+    text-align:center;
+    display:block;
+}
+
+aside > a {
+    width:170px;
+    border:1px solid gray;
+    background-color:white;
+    color:#971b19;
+    display:block;
+    text-align:center;
+    margin-bottom: 1px;
+    padding:3px 3px 5px;
+}
+
+h4 {
+    margin-bottom:0;
+    margin-top:0;
+    font-size:small;
+    background-color:#808080;
+    text-align:center;
+    color:white;
+}
+
+input[type="text"] {
+    width:100px;
+    margin-left:20px;
+}
+
+h3 {
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: small;
+    background-color: #808080;
+    color: white;
+}
+
+img[src="CSS-Logo.jpg"] {
+    float:left;
+    height:80px;
+    margin:10px 20px 10px 5px;
+}
+
+article > p {
+    margin-bottom:10px;
+    margin-top:10px;
+}
+
+article > a {
+    margin-bottom:10px;
+    margin-top:10px;
+}
+
+input[type="button"] {
+    background-color:white;
+    border:1px solid black;
+}
+
+input[value="25+ Styles!"] {
+    width:120px;
+    font-weight:bold;
+    margin-left:25px;
+    height:30px;
+    color:#4cd0fe;
+    background-color:#d0eefd;
+    border:1px solid rgba(76, 208, 254, 0.5);
+    border-radius:3px;
+    /*box-shadow: rgba(76, 208, 254, 0.5) 2px 2px 2px 2px inset;*/
+}

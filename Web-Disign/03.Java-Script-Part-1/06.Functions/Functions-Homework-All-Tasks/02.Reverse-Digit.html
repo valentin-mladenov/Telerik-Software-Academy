@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<p>Write a function that reverses the digits of given decimal number.</p>
+	<p>Example: 256  652.</p>
+	<div id="inputdiv">
+		<div class="input">
+			<label for="tb-first">Number: </label>
+			<input type="text" id="tb-first" />
+		</div>
+		<div id="inputbutton">
+			<a href="#" onclick="onFindButtonClick()">Find</a>
+		</div>
+	</div>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function onFindButtonClick() {
+			function reverseNumber(number) {
+				var i, finish, numstr;
+				numstr = number.toString();
+				var digitName = numstr.split('');
+				var reversedArray=[];
+				
+
+				for (i = 0; i < digitName.length; i+=1) {
+					reversedArray[i] = digitName[digitName.length - 1 - i];
+				}
+
+				finish = reversedArray.join('');
+				return finish;
+			}
+
+			var number = jsConsole.readInteger("#tb-first");
+			var last = reverseNumber(number);
+
+			jsConsole.writeLine("The reversed number is: " + last);
+		}
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <form>
+        <table border="1" cellpadding="2" cellspacing="0" style="border: 1px solid #a4abb2;">
+            <thead style="background-color: #e4e6e8;">
+                <tr>
+                    <th colspan="6" style="text-align: left; font-weight: normal; border: 1px solid #a4abb2;">Drag a column header and drop it here to goup by that column</th>
+                </tr>
+                <tr>
+                    <th style="text-align:center; font-weight:normal; width:10%"><label for="ProductID">ProductID</label></th>
+                    <th style="text-align:left; font-weight:normal;"><label for="productName">Product Name</label></th>
+                    <th style="text-align:left; font-weight:normal;"><label for="unitPrice">Unit price</label></th>
+                    <th style="text-align:left; font-weight:normal;"><label for="quantity">Quantity per unit</label></th>
+                    <th style="text-align:left; font-weight:normal;"><label for="unitsInStock">Units in stock</label></th>
+                    <th style="text-align:left; font-weight:normal;"><label for="discontinued">Discontinued</label></th>
+                </tr>
+                <tr>
+                    <th style="text-align:left; font-weight:normal;">
+                        <input type="text" name="ProductID" id="ProductID" size="3" />
+                    </th>
+                    <th style="text-align:left; font-weight:normal;">
+                        <input type="text" name="productName" id="productName" size="20" />
+                    </th>
+                    <th style="text-align:left; font-weight:normal;">
+                        <input type="text" name="unitPrice" id="unitPrice" size="10" />
+                        <input type="image" name="next" src="images/filter.png" alt="unitPrice" style="vertical-align: middle;" />
+                    </th>
+                    <th style="text-align:left; font-weight:normal;">
+                        <input type="text" name="quantity" id="quantity" size="10" />
+                    </th>
+                    <th style="text-align:left; font-weight:normal;">
+                        <input type="text" name="unitsInStock" id="unitsInStock" size="10" />
+                        <input type="image" name="next" src="images/filter.png" alt="unitsInStock" style="vertical-align: middle;" />
+                    </th>
+                    <th style="text-align:left; font-weight:normal;">
+                        <input type="checkbox" name="discontinued" id="discontinued" />
+                        <input type="image" name="next" src="images/filter.png" alt="Discontinued" style="vertical-align: middle;" />
+                    </th>
+                </tr>
+            </thead>
+            <tfoot style="background-color: #e4e6e8;">
+                <tr>
+                    <td colspan="3" style="border: none;">
+                        <input type="image" name="begin" src="images/begin.png" alt="Begin" style="vertical-align: middle;" />
+                        <input type="image" name="next" src="images/next.png" alt="Next" style="vertical-align: middle;" />
+                        <a href="#" class="active" style="text-decoration: none; color: black; vertical-align: middle; border: 1px solid rgb(255, 0, 0);">1</a>
+                        <a href="#" style="text-decoration: none; vertical-align: middle; color: black">2</a>
+                        <a href="#" style="text-decoration: none; vertical-align: middle; color: black">3</a>
+                        <a href="#" style="text-decoration: none; vertical-align: middle; color: black">4</a>
+                        <a href="#" style="text-decoration: none; vertical-align: middle; color: black">5</a>
+                        <a href="#" style="text-decoration: none; vertical-align: middle; color: black">6</a>
+                        <a href="#" style="text-decoration: none; vertical-align: middle; color: black">7</a>
+                        <a href="#" style="text-decoration: none; vertical-align: middle; color: black">8</a>
+                        <a href="#" style="text-decoration: none; vertical-align: middle; color: black">9</a>
+                        <a href="#" style="text-decoration: none; vertical-align: middle; color: black">10</a>
+                        <a href="#" style="text-decoration: none; vertical-align: middle; color: black">...</a>
+                        <input type="image" name="prevous" src="images/prev.png" alt="Prevous" style="vertical-align: middle;" />
+                        <input type="image" name="end" src="images/end.png" alt="End" style="vertical-align: middle;" />
+                        <label for="pageSize" style="vertical-align: middle;">Page size:</label>
+                        <select name="pageSize" id="pageSize" style="vertical-align: middle;">
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                    </td>
+                    <td colspan="3" style="vertical-align: middle; text-align: end; border: none;">335104 items in 33511 pages</td>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Chai</td>
+                    <td>$18.00</td>
+                    <td>10 boxes x 20 bags</td>
+                    <td>39</td>
+                    <td>
+                        <input type="checkbox" disabled />
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Chang</td>
+                    <td>$19.00</td>
+                    <td>24 - 12 oz bottles</td>
+                    <td>17</td>
+                    <td>
+                        <input type="checkbox" disabled />
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Aniseed Syrup</td>
+                    <td>$10.00</td>
+                    <td>12 - 550 ml bottles</td>
+                    <td>13</td>
+                    <td>
+                        <input type="checkbox" disabled />
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Chef Anton's Cajun Seasoning</td>
+                    <td>$22.00</td>
+                    <td>48 - 6 oz jars</td>
+                    <td>53</td>
+                    <td>
+                        <input type="checkbox" disabled />
+                    </td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Chef Anton's Gumbo Mix</td>
+                    <td>$21.35</td>
+                    <td>36 boxes</td>
+                    <td>0</td>
+                    <td>
+                        <input type="checkbox" disabled checked />
+                    </td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Grandma's boysenberry Spread</td>
+                    <td>$25.00</td>
+                    <td>12 - 8 oz jars</td>
+                    <td>120</td>
+                    <td>
+                        <input type="checkbox" disabled />
+                    </td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Uncle Bob's Organic Dried Pears</td>
+                    <td>$30.00</td>
+                    <td>12 - 1 lb pkgs</td>
+                    <td>15</td>
+                    <td>
+                        <input type="checkbox" disabled />
+                    </td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Northwoods Cranberry Sauce</td>
+                    <td>$40.00</td>
+                    <td>12 - 12 oz jars</td>
+                    <td>6</td>
+                    <td>
+                        <input type="checkbox" disabled />
+                    </td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Mishi Kobe Niku</td>
+                    <td>$97.00</td>
+                    <td>18 - 500 g pkgs.</td>
+                    <td>29</td>
+                    <td>
+                        <input type="checkbox" disabled checked />
+                    </td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Ikura</td>
+                    <td>$31.00</td>
+                    <td>12 - 200 ml jars</td>
+                    <td>31</td>
+                    <td>
+                        <input type="checkbox" disabled />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</body>
+</html>

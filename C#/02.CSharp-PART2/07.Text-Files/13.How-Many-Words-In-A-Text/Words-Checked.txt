@@ -1,0 +1,9 @@
+word Ivan repeats 2 times.
+word Peter repeats 0 times.
+word Maria repeats 3 times.
+word George repeats 3 times.
+word Mitko repeats 0 times.
+word Valentin repeats 4 times.
+word Marko repeats 2 times.
+word Asparuh repeats 0 times.
+word Telerik repeats 3 times.

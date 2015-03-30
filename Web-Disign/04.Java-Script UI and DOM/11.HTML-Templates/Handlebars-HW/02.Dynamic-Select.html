@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<script src="Scripts/handlebars.min.js"></script>
+</head>
+<body>
+	<script id="select-template" type="text/x-handlebars-template">
+		<select>
+			{{#options}}
+			<option value="{{value}}">{{text}}</option>
+			{{/options}}
+		</select>
+	</script>
+	<script>
+		var selectTemplate = document.getElementById('select-template');
+		var templateString = selectTemplate.innerHTML;
+		var template = Handlebars.compile(templateString);
+
+		var option = [{
+			value: 1,
+			text: 'One'
+		}, {
+			value: 2,
+			text: 'Two'
+		}, {
+			value: 3,
+			text: 'Three'
+		}, {
+			value: 4,
+			text: 'Four'
+		}, {
+			value: 5,
+			text: 'Five'
+		}, {
+			value: 6,
+			text: 'Six'
+		}, {
+			value: 7,
+			text: 'Seven'
+		}];
+
+		var selectHTML = template({
+			options: option
+		});
+		document.body.innerHTML += selectHTML;
+	</script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<script src="Scripts/jquery-2.1.1.min.js"></script>
+	<script src="Scripts/handlebars.min.js"></script>
+	<style>
+		table {
+			border-collapse: collapse;
+			font-weight: bold;
+			font-family: Arial;
+		}
+
+		table, tr, td, th {
+			border: 1px solid black;
+		}
+
+		th {
+			background-color: #A6A6A6;
+			color: white;
+		}
+
+		td {
+			padding: 3px;
+		}
+
+		tr:nth-child(odd) {
+			background-color: #D9D9D9;
+		}
+
+		#div-students-table {
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<ul id="books-list" data-template="book-item-template"></ul>
+
+		<div id="students-table-wrapper">
+			Generated only students rows from template
+			<table id="students-table">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Name</th>
+						<th>Mark</th>
+					</tr>
+				</thead>
+				<tbody id="students-table-body" data-template="students-row-template"></tbody>
+			</table>
+		</div>
+
+		<div id="div-students-table">Generated whole table from template</div>
+	</div>
+
+	<script id="book-item-template" type="text/x-handlebars-template">
+		{{#each books}}
+		<li class="book-item">
+			<a href="/#books/{{id}}">
+				<strong>{{title}}</strong>
+			</a>
+		</li>
+		{{/each}}
+	</script>
+
+	<script id="students-row-template" type="text/x-handlebars-template">
+		{{#each students}}
+		<tr class="student-row">
+			<td>{{@index}}</td>
+			<td>{{name}}</td>
+			<td>{{mark}}</td>
+		</tr>
+		{{/each}}
+	</script>
+
+	<script id="students-table-template" type="text/x-handlebars-template">
+		<table>
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Name</th>
+					<th>Mark</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				{{#each students}}
+				<tr>
+					<td>{{@index}}</td>
+					<td>{{name}}</td>
+					<td>{{mark}}</td>
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</script>
+
+	<script src="script/03.ListView.js"></script>
+</body>
+</html>

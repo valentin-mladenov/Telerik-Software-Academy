@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<script src="libs/jquery-2.1.1.js"></script>
+	<script src="script/02.FadeIn-FadeOut-Plugin.js"></script>
+</head>
+<body>
+	<div id="root">
+		<input type="button" id="success" value="Success!!!"/>
+		<input type="button" id="error" value="Error!?"/>
+		<div id="message-box"></div>
+	</div>
+
+	<script>
+		var msgBox = $('#message-box').messageBox(),
+			$success = $('#success'),
+			$error = $('#error');
+
+		$('#success').on('click', function (ev) {
+
+			msgBox.success('Success message');
+			//$(msgBox.success('Success message')).fadeOut();
+		});
+		$('#error').on('click', function (ev) {
+			msgBox.error('Error message');
+		});
+	</script>
+
+</body>
+</html>

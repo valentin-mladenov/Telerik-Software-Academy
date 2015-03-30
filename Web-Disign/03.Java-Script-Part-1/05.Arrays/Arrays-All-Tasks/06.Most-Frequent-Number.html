@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<p>Write a program that finds the most frequent number in an array.</p>
+	<p>Example: {4, 1, 1, 4, 2, 3, 4, 4, 1, 2, 4, 9, 3} -> 4 (5 times).</p>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function selectionSort(array) {
+			var min, temp
+
+			for (var i = 0; i < array.length - 1; i++) {
+				min = i;
+
+				for (var j = i + 1; j < array.length; j++) {
+					if (array[j] < array[min]) {
+						min = j;
+					}
+				}
+
+				temp = array[i];
+				array[i] = array[min];
+				array[min] = temp;
+			}
+
+			jsConsole.writeLine('Sorted:');
+			jsConsole.writeLine(array.join(', '));
+			return array;
+		}
+
+		function findingSecuenceNumbers(array) {
+			var result = 1;
+			var count = 0;
+			var currentMaxResult = 0;
+			var countTemp = 0;
+
+			for (var i = 0; i < array.length - 1; i++) {
+				if (array[i] === array[i + 1]) {
+					result++;
+					count = array[i];
+				} else {
+					if (currentMaxResult < result) {
+						currentMaxResult = result;
+						countTemp = array[i];
+						result = 1;
+					}
+				}
+			}
+
+			if (currentMaxResult <= result) {
+				jsConsole.writeLine("Element: " + count + ", Repeats: " + result + " times.");
+			} else {
+				jsConsole.writeLine("Element: " + countTemp + ", Repeats: " + currentMaxResult + " times.");
+			}
+		}
+		
+		var array = [2, 3, 4, 5, 2, 5, 5, 5, 6, 8, 0];
+		jsConsole.writeLine('Original array:');
+		jsConsole.writeLine(array.join(', '));
+
+		var array = selectionSort(array);
+
+		findingSecuenceNumbers(array);
+	</script>
+
+</body>
+</html>

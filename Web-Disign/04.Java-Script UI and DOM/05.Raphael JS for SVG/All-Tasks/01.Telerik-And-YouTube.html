@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+	<script src="Scripts/raphael.js"></script>
+</head>
+<body>
+	<div id="svg-container"></div>
+	<script>
+		var paper = Raphael('svg-container', 800, 500);
+
+		//Task 1 Telerik LOGO
+		paper.path('M50 50 L70 30 L130 90 L100 120 L70 90 L130 30 L150 50')
+			.attr({
+				stroke: '#5DE40E',
+				'stroke-width': 15
+			});
+
+		paper.text(360, 90, 'Telerik')
+			.attr({
+				'font-size': 120,
+				'font-family': 'Arial',
+				'font-weight': 900
+			});
+
+		paper.text(427, 160, 'Develop experiences')
+			.attr({
+				'font-size': 52,
+				'font-family': 'Segoe UI',
+				'font-weight': 100
+			});
+
+		paper.text(560, 80, '®')
+			.attr({
+				'font-size': 25,
+				'font-family': 'Arial',
+			});
+
+		//task2 YouTube Logo
+		paper.text(100, 350, 'You')
+			.attr({
+				'font-size': 100,
+				'font-family': 'Yu Gothic',
+				'font-weight': 900,
+				fill: '#333333'
+			});
+		
+		paper.rect(210, 280, 280, 140, 40)
+			.attr({
+				fill: 'red',
+				stroke: 'none'
+			});
+
+		paper.text(350, 350, 'Tube')
+			.attr({
+				'font-size': 100,
+				'font-family': 'Yu Gothic',
+				'font-weight': 900,
+				fill: 'white'
+			});
+	</script>
+</body>
+</html>

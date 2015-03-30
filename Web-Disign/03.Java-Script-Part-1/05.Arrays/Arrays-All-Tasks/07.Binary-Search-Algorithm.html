@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<p>Write a program that finds the index of given element in a sorted array of integers by using the binary search algorithm (find it in Wikipedia).</p>
+	<div id="inputdiv">
+		<div class="input">
+			<label for="tb-first">Number: </label>
+			<input type="text" id="tb-first" />
+		</div>
+		<div id="inputbutton">
+			<a href="#" onclick="onFindButtonClick()">Find</a>
+		</div>
+	</div>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function onFindButtonClick() {
+			function selectionSort(array) {
+				var min, temp
+
+				for (var i = 0; i < array.length - 1; i++) {
+					min = i;
+
+					for (var j = i + 1; j < array.length; j++) {
+						if (array[j] < array[min]) {
+							min = j;
+						}
+					}
+
+					temp = array[i];
+					array[i] = array[min];
+					array[min] = temp;
+				}
+
+				jsConsole.writeLine('Sorted:');
+				jsConsole.writeLine(array.join(', '));
+				return array;
+			}
+
+			function binSearch(array, key) {
+
+				var array = selectionSort(array);
+
+				var iMax = array.length - 1;
+				var iMin = 0;
+				var iMiddle = 0;
+
+				while (iMax >= iMin) {
+					iMiddle = Math.floor((iMax + iMin) / 2);
+					if (array[iMiddle] < key) {
+						iMin = iMiddle + 1;
+					} else if (array[iMiddle] > key) {
+						iMax = iMiddle - 1;
+					} else {
+						return iMiddle;
+					}
+				}
+				return -1;
+			}
+
+			var array = [24, 12, 13, 6, 4, 9, 0, 10, 7, 5, 8];
+			jsConsole.writeLine('Original array:');
+			jsConsole.writeLine(array.join(', '));
+
+			var key = jsConsole.readInteger("#tb-first");
+			var result = binSearch(array, key);
+
+			if (result === -1) {
+				jsConsole.writeLine('Number ' + key + ' is not in the array.');
+			} else {
+				jsConsole.writeLine('Number ' + key + ' is at index: ' + result +'.');
+			} 
+		}
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+	<h3>
+			Task 1
+			<br />
+			Write a script that selects all the div nodes that are directly inside other div elements.
+			Create a function using querySelectorAll(),
+			Create a function using getElementsByTagName().
+	</h3>
+	<div>
+		<span>outside</span>
+		<div>
+			<span>inside 1</span>
+		</div>
+		<div>
+			<span>inside 2</span>
+			<div>
+				<span>inside 3</span>
+			</div>
+		</div>
+	</div>
+	<div>
+		<span>out</span>
+		<div>
+			<span>inside 1</span>
+		</div>
+		<div>
+			<span>inside 2</span>
+			<div>
+				<span>inside 3</span>
+			</div>
+		</div>
+	</div>
+	<button onclick="Task1()">Task 1</button>
+	<hr style="border:1px solid black"/>
+
+	<h3>
+		Task 2
+		<br />
+		Create a function that gets the value of &lt;input type="text"&gt; ands prints its value to the console.
+	</h3>
+	<input type="text" value="Add something"/>
+	<input type="button" value="Check" /> <!-- cheking not to get other inputs value --> 
+	<button onclick="Task2()">Task 2</button>
+	<hr style="border:1px solid black" />
+
+	<h3>
+		Task 3
+		<br />
+		Crеate a function that gets the value of &lt;input type="color"&gt; and sets the background of the body to this value.
+	</h3>
+	<input type="color" />
+	<button onclick="Task3()">Task 3</button>
+	<script>
+		function Task1() {
+
+			// Create a function using getElementsByTagName()
+			function divInDivTagName() {
+				var theDiv = document.getElementsByTagName('div'); // main diference
+
+				var divInDivCount = 0;
+
+				for (var i = 0, length = theDiv.length; i < length; i += 1) {
+					if (theDiv[i].parentNode instanceof HTMLDivElement) {
+						divInDivCount += 1;
+					}
+				}
+
+				console.log('getElementsByTagName()');
+				console.log('There are exactly ' + divInDivCount + ' nested divs.');
+			}
+
+			// Create a function using querySelectorAll()
+			function divInDivSelectorAll() {
+				var allDivs = document.querySelectorAll('div'); // main diference
+
+				var divInDivCount = 0;
+
+				for (var i = 0, length = allDivs.length; i < length; i += 1) {
+					if (allDivs[i].parentNode instanceof HTMLDivElement) {
+						divInDivCount += 1;
+					}
+				}
+
+				console.log('querySelectorAll()');
+				console.log('There are exactly ' + divInDivCount + ' nested divs.');
+			}
+
+
+			divInDivTagName();
+			divInDivSelectorAll();
+		}
+
+		function Task2() {
+			var text = document.getElementsByTagName('input');
+
+			for (var i = 0, length = text.length; i < length; i += 1) {
+				if (text[i].type === 'text') {
+					console.log(text[i].value);
+				}
+			}
+		}
+
+		function Task3() {
+			var inputs = document.getElementsByTagName('input');
+			var color;
+
+			for (var i = 0, length = inputs.length; i < length; i += 1) {
+				if (inputs[i].type === 'color') {
+					color = inputs[i];
+					break;
+				}
+			}
+
+			document.body.style.background = color.value;
+		}
+	</script>
+</body>
+</html>

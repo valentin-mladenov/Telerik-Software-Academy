@@ -1,0 +1,14 @@
+﻿<Window x:Class="MongoDbChat.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="LoginWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="201*"/>
+            <ColumnDefinition Width="316*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="LogIn" HorizontalAlignment="Left" Margin="156,264,0,0" VerticalAlignment="Top" Width="124" Height="29" Click="LogInClick" Grid.Column="1"/>
+        <TextBox Name="LogNameTextBox" HorizontalAlignment="Left" Height="29" Margin="26,264,0,0" TextWrapping="Wrap" Text="UserName" VerticalAlignment="Top" Width="326" RenderTransformOrigin="0.483,2.836" Grid.ColumnSpan="2"/>
+
+    </Grid>
+</Window>

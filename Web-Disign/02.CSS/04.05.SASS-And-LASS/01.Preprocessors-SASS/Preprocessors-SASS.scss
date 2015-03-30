@@ -1,0 +1,63 @@
+$p-color:white;
+$h1-color:white;
+$link-color:gray;
+$footer:center;
+ 
+$button-bgcolor:rgba(255, 255, 255, 0.2);
+$button-color:white;
+$button-font-weight:bold;
+$button-border:1px solid #8949b9;
+$border-style: outset;
+$link-color-normal:white;
+  
+@mixin linear-gradient($from, $to,$repeat:repeat-x) {
+    background-image: -webkit-linear-gradient(top, $from, $to);
+    background-image: -moz-linear-gradient(top, $from, $to);
+    background-image: -ms-linear-gradient(top, $from, $to);
+    background-image: -o-linear-gradient(top, $from, $to);
+    background-image: linear-gradient(to bottom, $from, $to);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$from}', endColorstr='#{$to}',GradientType=0 );
+    background-repeat:$repeat;
+}
+  
+  
+  
+body {
+     
+  @include linear-gradient(#b767f3,#9215f2);
+  
+    h1 {
+		color:$h1-color;
+    }
+    a {
+		color:$link-color-normal;
+    }
+}
+  
+  
+  
+  
+P {
+    a {
+    color:$link-color;
+    }
+}
+  
+   
+button {
+           
+                background-color: $button-bgcolor;
+                color: $button-color;
+                font-weight: button-font-weight;
+                border: $button-border;
+                border-style: $border-style;
+}
+p {
+    color:$p-color;
+}
+footer {
+      
+    p {
+        text-align:$footer;
+    }
+}

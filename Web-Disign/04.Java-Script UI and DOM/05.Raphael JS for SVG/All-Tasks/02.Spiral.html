@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<script src="Scripts/raphael.js"></script>
+</head>
+<body>
+	<div id="svg-container"></div>
+	<script>
+		var paper = Raphael('svg-container', 500, 500),
+			turnCounter = 0,
+			distance = 2;
+		
+		function drawSpiral(cx, cy, turnCounter, distance) {
+			var turnAngle = 0,
+				x, y,
+				radius = turnCounter + distance * turnAngle,
+				pointsToSpiralStr = 'M' + cx + ' ' + cy + ' ';
+
+			while (radius <= paper.height / 2 || radius <= paper.width / 2) {
+
+				//Archimedian spiral equation: r = a + b * angle;
+				radius = turnCounter + distance * turnAngle;
+
+				x = cx + radius * Math.cos(turnAngle);
+				y = cy + radius * Math.sin(turnAngle);
+
+				pointsToSpiralStr = pointsToSpiralStr + 'L' + x + ' ' + y + ' ';
+
+				turnAngle += 0.1;
+			}
+
+			spiral = paper.path(pointsToSpiralStr);
+		}
+
+		drawSpiral(paper.width / 2, paper.height / 2, turnCounter, distance);
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<script src="scripts/string-extensions.js"></script>
+</head>
+<body>
+	<p>Write a JavaScript function to check if in a given expression the brackets are put correctly.</p>
+	<p>Example of correct expression: ((a+b)/5-d).</p>
+	<p>Example of incorrect expression: )(a+b)).</p>
+	<div id="inputdiv">
+		<div class="input">
+			<label for="tb-first">Expression: </label>
+			<input type="text" id="tb-first" />
+		</div>
+		<div id="inputbutton">
+			<a href="#" onclick="onFindButtonClick()">Find</a>
+		</div>
+	</div>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function onFindButtonClick() {
+			var expression = jsConsole.read('#tb-first');
+
+			var i, j, countClose = 0, countOpen = 0, error = false;
+			var  operators = [ '/', '*', '-', '+', '=' ];
+
+			if (expression[0] === ')') {
+				jsConsole.writeLine("Bracets are put incorrectly.");
+			}
+			else {
+				for (i = 0; i < expression.length; i++) {
+					if (expression[i] === '(') {
+						countOpen++;
+					}
+					if (expression[i] === ')') {
+						for (j = 0; j < operators.length; j++) {
+							if (expression[i - 1] === operators[j]) {
+								error = true;
+								break;
+							}
+						}
+						if (error === true) {
+							break;
+						}
+						else {
+							countClose++;
+						}
+					}
+				}
+				if ((countClose === countOpen) && (error === false)) {
+					jsConsole.writeLine("Bracets are put correctly.");
+				}
+				else {
+					jsConsole.writeLine("Bracets are put incorrectly.");
+				}
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<dirs>
+	<folder>bin</folder>
+	<file>09.Traverse-Directory.exe</file>
+	<file>09.Traverse-Directory.exe.config</file>
+	<file>09.Traverse-Directory.pdb</file>
+	<file>09.Traverse-Directory.vshost.exe</file>
+	<file>09.Traverse-Directory.vshost.exe.config</file>
+	<folder>bin</folder>
+	<file>App.config</file>
+	<file>CurrentDir.xml</file>
+	<file>CurrentDirXMLWriter.xml</file>
+	<file>Traverse-Directory.csproj</file>
+	<file>TraverseDirectory.cs</file>
+	<folder>FilesAndFolders</folder>
+	<file>App.config</file>
+	<file>CurrentDir.xml</file>
+	<file>CurrentDirXMLWriter.xml</file>
+	<file>Traverse-Directory.csproj</file>
+	<file>TraverseDirectory.cs</file>
+	<folder>Debug</folder>
+	<file>09.Traverse-Directory.csproj.FileListAbsolute.txt</file>
+	<file>09.Traverse-Directory.csprojResolveAssemblyReference.cache</file>
+	<file>09.Traverse-Directory.exe</file>
+	<file>09.Traverse-Directory.pdb</file>
+	<file>DesignTimeResolveAssemblyReferencesInput.cache</file>
+	<file>TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs</file>
+	<file>TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs</file>
+	<file>TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs</file>
+	<file>Traverse-Directory.csproj.FileListAbsolute.txt</file>
+	<file>App.config</file>
+	<file>CurrentDir.xml</file>
+	<file>CurrentDirXMLWriter.xml</file>
+	<file>Traverse-Directory.csproj</file>
+	<file>TraverseDirectory.cs</file>
+	<folder>Properties</folder>
+	<file>App.config</file>
+	<file>CurrentDir.xml</file>
+	<file>CurrentDirXMLWriter.xml</file>
+	<file>Traverse-Directory.csproj</file>
+	<file>TraverseDirectory.cs</file>
+</dirs>
