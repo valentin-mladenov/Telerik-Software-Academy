@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Name>MySQL_HW</Name>
+    <ProjectGuid>4a81ec85-e1f7-46ad-8a5b-6292e3d211a1</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>MySQL_HW</RootNamespace>
+    <ProjectTypeGuids>{A0786B88-2ADB-4C21-ABE8-AA2D79766269}</ProjectTypeGuids>
+    <AssemblyName>MySQL-HW</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <IncludeDebugInformation>true</IncludeDebugInformation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <IncludeDebugInformation>false</IncludeDebugInformation>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Constants.php" />
+    <Compile Include="messages.php" />
+    <Compile Include="Footer.php" />
+    <Compile Include="Head.php" />
+    <Compile Include="index.php" />
+    <Compile Include="logOut.php" />
+    <Compile Include="NewMessage.php" />
+    <Compile Include="register.php" />
+  </ItemGroup>
+</Project>
