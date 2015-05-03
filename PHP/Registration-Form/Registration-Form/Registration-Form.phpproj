@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Name>Registration_Form</Name>
+    <ProjectGuid>55c6d4d0-403a-41fd-a9c8-1029721d5eab</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Registration_Form</RootNamespace>
+    <ProjectTypeGuids>{A0786B88-2ADB-4C21-ABE8-AA2D79766269}</ProjectTypeGuids>
+    <AssemblyName>Registration-Form</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <IncludeDebugInformation>true</IncludeDebugInformation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <IncludeDebugInformation>false</IncludeDebugInformation>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="index.php" />
+    <Compile Include="parts\Ajax.php" />
+    <Compile Include="parts\Confirmation.php" />
+    <Compile Include="parts\Footer.php" />
+    <Compile Include="parts\Header.php" />
+    <Compile Include="parts\Register.php" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Scripts\" />
+    <Folder Include="Script\" />
+    <Folder Include="parts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="Scripts\jquery-2.1.3.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.3.js" />
+    <Content Include="Scripts\jquery-2.1.3.min.js" />
+    <Content Include="Scripts\jquery-2.1.3.min.map" />
+    <Content Include="Script\Send-And-Recieve.js" />
+  </ItemGroup>
+</Project>
